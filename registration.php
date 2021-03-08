@@ -1,5 +1,7 @@
 <link rel="stylesheet" href='assets/css/login.css'>
 <?php
+include_once("includes/front/header.php");
+
 session_start();
 include('config.php');
 if (isset($_POST['register'])) {
@@ -42,3 +44,8 @@ if (isset($_POST['register'])) {
     </div>
     <button type="submit" name="register" value="register">Register</button>
 </form>
+<?php
+include_once ("includes/front/footer.php"); ?>
+</body>
+</html>
+
