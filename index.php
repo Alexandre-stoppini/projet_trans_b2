@@ -4,7 +4,7 @@ include_once("includes/front/header.php");
 ?>
 
 <main>
-
+<p>pouet</p>
 </main>
 
 <?php
