@@ -1,0 +1,32 @@
+header, footer {
+    background-color: black;
+    opacity: 75%;
+    width: 100%;
+    height: 150px;
+    font-size: 1.5rem;
+}
+
+#header {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+}
+
+a {
+    margin: 20px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color:#00A0C6;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+
+body {
+    text-align: center;
+
+}
