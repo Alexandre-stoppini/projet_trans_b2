@@ -47,7 +47,6 @@ if (isset($_POST['register'])) {
                 echo $e->getMessage();
             }
             echo '<p class="success">Your registration was successful!</p>';
-            header('Location: login.php');
         } else {
             echo '<p class="error">Something went wrong!</p>';
         }
