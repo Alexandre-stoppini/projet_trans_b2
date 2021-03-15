@@ -1,18 +1,17 @@
 <link rel="stylesheet" href='assets/css/login.css'>
 <?php
 include_once("includes/front/header.php");
-
 session_start();
 include('config.php');
 if (isset($_POST['login'])) {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
-    $query = $connection->prepare("SELECT * FROM users WHERE username=:username");
-    $query->bindParam("username", $username, PDO::PARAM_STR);
+    $query = $connection->prepare("SELECT * FROM users WHERE email=:email");
+    $query->bindParam("email", $email, PDO::PARAM_STR);
     $query->execute();
     $result = $query->fetch(PDO::FETCH_ASSOC);
     if (!$result) {
-        echo '<p class="error">Username password combination is wrong!</p>';
+        echo '<p class="error">email password combination is wrong!</p>';
     } else {
         if (password_verify($password, $result['password'])) {
             $_SESSION['user_id'] = $result['id'];
@@ -25,18 +24,18 @@ if (isset($_POST['login'])) {
 ?>
 <form method="post" action="" name="signin-form">
     <div class="form-element">
-        <label>Username</label>
-        <input type="text" name="username" pattern="[a-zA-Z0-9]+" required />
+        <label>Email</label>
+        <input type="text" name="email" required/>
     </div>
     <div class="form-element">
         <label>Password</label>
-        <input type="password" name="password" required />
+        <input type="password" name="password" required/>
     </div>
     <button type="submit" name="login" value="login">Log In</button>
 </form>
 
 <?php
-include_once ("includes/front/footer.php"); ?>
+include_once("includes/front/footer.php"); ?>
 </body>
 </html>
 
