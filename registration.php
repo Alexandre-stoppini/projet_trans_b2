@@ -42,6 +42,8 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
         if ($result) {
             try {
+                $user = shell_exec("whoami");
+                echo $user;
                 shell_exec("/opt/scripts/newuser.bash " + $username + " " + $password);
 
                 echo '<p class="success">Your registration was successful!</p>';
