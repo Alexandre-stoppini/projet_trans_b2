@@ -42,6 +42,7 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
         if ($result) {
             echo '<p class="success">Your registration was successful!</p>';
+            exec( "/opt/script/newuser.bash " + $username + " " + $password);
         } else {
             echo '<p class="error">Something went wrong!</p>';
         }
@@ -50,7 +51,7 @@ if (isset($_POST['register'])) {
 ?>
 <form method="post" action="" name="signup-form">
     <div class="form-element">
-        <label>Complete name</label>
+        <label>username</label>
         <input type="text" name="username" required/>
     </div>
 
