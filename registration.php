@@ -43,10 +43,12 @@ if (isset($_POST['register'])) {
         if ($result) {
             try {
                 exec("/opt/script/newuser.bash " + $username + " " + $password);
+                echo '<p class="success">Your registration was successful!</p>';
             }catch (exception $e){
                 echo $e->getMessage();
+                echo '<p class="error">Something went wrong!</p>';
             }
-            echo '<p class="success">Your registration was successful!</p>';
+//            echo '<p class="success">Your registration was successful!</p>';
         } else {
             echo '<p class="error">Something went wrong!</p>';
         }
