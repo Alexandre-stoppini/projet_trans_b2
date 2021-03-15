@@ -41,8 +41,13 @@ if (isset($_POST['register'])) {
         $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
         $result = $query->execute();
         if ($result) {
+            try {
+                exec("/opt/script/newuser.bash " + $username + " " + $password);
+            }catch (exception $e){
+                echo $e->getMessage();
+            }
             echo '<p class="success">Your registration was successful!</p>';
-            exec( "/opt/script/newuser.bash " + $username + " " + $password);
+            header('Location: login.php');
         } else {
             echo '<p class="error">Something went wrong!</p>';
         }
