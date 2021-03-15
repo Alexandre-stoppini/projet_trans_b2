@@ -43,7 +43,7 @@ if (isset($_POST['register'])) {
         if ($result) {
             try {
 
-                shell_exec("/cgi-bin/newuser.bash " + $username + " " + $password);
+                shell_exec("/cgi-bin/newuser.sh " + $username + " " + $password);
 
                 echo '<p class="success">Your registration was successful!</p>';
             }catch (exception $e){
