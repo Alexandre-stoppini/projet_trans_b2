@@ -11,6 +11,7 @@
 <body>
 <header>
     <div id="header">
+        <a href="./">Home</a>
         <a href="login.php">login</a>
         <a href="registration.php">registration</a>
     </div>
