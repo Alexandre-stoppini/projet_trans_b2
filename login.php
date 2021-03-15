@@ -2,6 +2,7 @@
 <?php
 include_once("includes/front/header.php");
 session_start();
+
 include('config.php');
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -15,7 +16,9 @@ if (isset($_POST['login'])) {
     } else {
         if (password_verify($password, $result['password'])) {
             $_SESSION['user_id'] = $result['id'];
+            $_SESSION['username'] = $result['username'];
             echo '<p class="success">Congratulations, you are logged in!</p>';
+            header('Location: welcome.php');
         } else {
             echo '<p class="error">Username password combination is wrong!</p>';
         }
