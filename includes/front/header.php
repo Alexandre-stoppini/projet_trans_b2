@@ -12,7 +12,7 @@
 <header>
     <div id="header">
         <a href="./">Home</a>
-        <a href="login.php">login</a>
-        <a href="registration.php">registration</a>
+        <a href="login.php">Login</a>
+        <a href="registration.php">Registration</a>
     </div>
 </header>
