@@ -20,12 +20,19 @@ if (isset($_POST['register'])) {
         echo '<p class="error">The email address is already registered!</p>';
         $error++;
     }
+    $verifUser = $connection->prepare("SELECT * FROM users WHERE username=:username");
+    $verifUser->bindParam("username", $username, PDO::PARAM_STR);
+    $verifUser->execute();
+    if ($verifUser->rowCount() > 0) {
+        echo '<p class="error">The username is already registered!</p>';
+        $error++;
+    }
     if ($_POST['password_rep'] != $_POST['password']) {
         echo '<p class="error">Passwords mismatch</p>';
         $error++;
     }
     if ($error == 0) {
-        $query = $connection->prepare("INSERT INTO users(username, address, company, email, telephone,password) VALUES (:username, :address, :company, :email, :telephone,:password_hash)");
+        $query = $connection->prepare("INSERT INTO users(username, address, company, email, telephone ,password) VALUES (:username, :address, :company, :email, :telephone,:password_hash)");
         $query->bindParam("username", $username, PDO::PARAM_STR);
         $query->bindParam("address", $address, PDO::PARAM_STR);
         $query->bindParam("company", $company, PDO::PARAM_STR);
