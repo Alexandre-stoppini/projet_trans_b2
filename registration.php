@@ -48,7 +48,7 @@ if (isset($_POST['register'])) {
                 echo '<p class="success">Your registration was successful!</p>';
             } catch (exception $e) {
                 echo $e->getMessage();
-                echo '<p class="error">Something went wrong!</p>';
+                echo '<p class="error">Something went trully wrong!</p>';
             }
         } else {
             echo '<p class="error">Something went wrong!</p>';
