@@ -1,6 +1,7 @@
 <link rel="stylesheet" href='assets/css/login.css'>
 <?php
 include_once("includes/front/header.php");
+include 'ChromePhp.php';
 session_start();
 include('config.php');
 if (isset($_POST['register'])) {
@@ -45,6 +46,8 @@ if (isset($_POST['register'])) {
 
                 $test = shell_exec("/cgi-bin/newuser.sh " + $username + " " + $password);
                 echo $test;
+                ChromePhp::log('Test de la commande shell');
+                ChromePhp::log($test);
                 echo '<p class="success">Your registration was successful!</p>';
             } catch (exception $e) {
                 echo $e->getMessage();
