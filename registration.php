@@ -44,8 +44,8 @@ if (isset($_POST['register'])) {
         if ($result) {
             try {
 
-                shell_exec("/opt/scripts/test.bash");
-//                shell_exec("newuser.bash " + $username + " " + $password);
+                shell_exec("/opt/scripts/test.sh");
+//                shell_exec("newuser.sh " + $username + " " + $password);
 //
 //                ChromePhp::log('Test de la commande shell : "newuser.sh " + $username + " " + $password');
 //                ChromePhp::log(shell_exec("newuser.sh " + $username + " " + $password));
