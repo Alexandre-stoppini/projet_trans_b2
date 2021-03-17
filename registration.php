@@ -43,14 +43,18 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
         if ($result) {
             try {
-                $commande = "/bin/bash /usr/local/bin/newuser.sh " . $username . " " . $password;
-               $test = exec($commande);
+//                $commande = "/bin/bash /usr/local/bin/newuser.sh " . $username . " " . $password;
+//               $test = exec($commande);
+                shell_exec("sudo useradd $username -d /home/$username -m");
+                shell_exec("  sudo usermod -a -G clients $username");
+                shell_exec("sudo echo $password | sudo passwd $username --stdin");
+                shell_exec(" sudo mkdir /sauvegarde/$username");
+                shell_exec(" sudo ln -s /sauvegarde/$username /home/$username/sauvegarde");
+//                echo $test;
 
-                echo $test;
-
-                ChromePhp::log($test);
-                ChromePhp::log('Commande :');
-                ChromePhp::log($commande);
+//                ChromePhp::log($test);
+//                ChromePhp::log('Commande :');
+//                ChromePhp::log($commande);
 
 
                 echo '<p class="success">Your registration was successful!</p>';
