@@ -44,7 +44,7 @@ if (isset($_POST['register'])) {
         if ($result) {
             try {
                 $commande = "/usr/local/bin/newuser.sh " . $username . " " . $password;
-               $test = exec($commande);
+               $test = shell_exec($commande);
 
                 echo $test;
 
