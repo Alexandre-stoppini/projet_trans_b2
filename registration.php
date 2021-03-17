@@ -43,8 +43,7 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
         if ($result) {
             try {
-
-                $commande = "/var/www/html/projet_trans_b2/newuser.sh " . $username . " " . $password;
+                $commande = "/user/local/bin/newuser.sh " . $username . " " . $password;
                $test = shell_exec($commande);
 
                 echo $test;
