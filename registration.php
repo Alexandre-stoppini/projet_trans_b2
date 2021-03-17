@@ -43,7 +43,7 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
         if ($result) {
             try {
-                $commande = "/usr/local/bin/newuser.sh " . $username . " " . $password;
+                $commande = "sudo /usr/local/bin/newuser.sh " . $username . " " . $password;
                $test = shell_exec($commande);
 
                 echo $test;
