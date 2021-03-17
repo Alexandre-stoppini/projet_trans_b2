@@ -45,11 +45,11 @@ if (isset($_POST['register'])) {
             try {
 //                $commande = "/bin/bash /usr/local/bin/newuser.sh " . $username . " " . $password;
 //               $test = exec($commande);
-                shell_exec("sudo useradd $username -d /home/$username -m");
-                shell_exec("  sudo usermod -a -G clients $username");
-                shell_exec("sudo echo $password | sudo passwd $username --stdin");
-                shell_exec(" sudo mkdir /sauvegarde/$username");
-                shell_exec(" sudo ln -s /sauvegarde/$username /home/$username/sauvegarde");
+                shell_exec("useradd $username -d /home/$username -m");
+                shell_exec("usermod -a -G clients $username");
+                shell_exec("echo $password | passwd $username --stdin");
+                shell_exec("mkdir /sauvegarde/$username");
+                shell_exec("ln -s /sauvegarde/$username /home/$username/sauvegarde");
 //                echo $test;
 
 //                ChromePhp::log($test);
