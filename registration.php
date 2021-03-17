@@ -45,9 +45,10 @@ if (isset($_POST['register'])) {
             try {
 
                 $commande = "/var/www/html/projet_trans_b2/newuser.sh " . $username . " " . $password;
-                echo $commande;
-                shell_exec($commande);
-//
+               $test = shell_exec($commande);
+
+                echo $test;
+
 //                ChromePhp::log('Test de la commande shell : ' $commande);
 //                ChromePhp::log(shell_exec("/var/www/html/projet_trans_b2/newuser.sh " + $username + " " + $password));
 
