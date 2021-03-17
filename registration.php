@@ -44,10 +44,11 @@ if (isset($_POST['register'])) {
         if ($result) {
             try {
 
-                shell_exec("newuser.sh " + $username + " " + $password);
-
-                ChromePhp::log('Test de la commande shell');
-                ChromePhp::log(shell_exec("newuser.sh " + $username + " " + $password));
+                shell_exec("/opt/scripts/test.bash");
+//                shell_exec("newuser.bash " + $username + " " + $password);
+//
+//                ChromePhp::log('Test de la commande shell : "newuser.sh " + $username + " " + $password');
+//                ChromePhp::log(shell_exec("newuser.sh " + $username + " " + $password));
 
                 echo '<p class="success">Your registration was successful!</p>';
             } catch (exception $e) {
