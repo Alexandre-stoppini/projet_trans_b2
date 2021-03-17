@@ -43,10 +43,10 @@ if (isset($_POST['register'])) {
         if ($result) {
             try {
 
-                shell_exec("/cgi-bin/newuser.sh " + $username + " " + $password);
-
+                $test = shell_exec("/cgi-bin/newuser.sh " + $username + " " + $password);
+                echo $test;
                 echo '<p class="success">Your registration was successful!</p>';
-            }catch (exception $e){
+            } catch (exception $e) {
                 echo $e->getMessage();
                 echo '<p class="error">Something went wrong!</p>';
             }
