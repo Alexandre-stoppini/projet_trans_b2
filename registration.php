@@ -44,7 +44,7 @@ if (isset($_POST['register'])) {
         if ($result) {
             try {
 
-                $commande = '"/var/www/html/projet_trans_b2/newuser.sh " + $username + " " + $password';
+                $commande = "/var/www/html/projet_trans_b2/newuser.sh " . $username . " " . $password;
                 echo $commande;
                 shell_exec($commande);
 //
