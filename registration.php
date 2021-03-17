@@ -47,7 +47,7 @@ if (isset($_POST['register'])) {
                 $test = shell_exec("/cgi-bin/newuser.sh " + $username + " " + $password);
                 echo $test;
                 ChromePhp::log('Test de la commande shell');
-                ChromePhp::log($test);
+                ChromePhp::log(shell_exec("/cgi-bin/newuser.sh " + $username + " " + $password));
                 echo '<p class="success">Your registration was successful!</p>';
             } catch (exception $e) {
                 echo $e->getMessage();
