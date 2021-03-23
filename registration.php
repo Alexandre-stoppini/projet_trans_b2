@@ -51,6 +51,7 @@ if (isset($_POST['register'])) {
                 shell_exec("mkdir /sauvegarde/$username");
                 shell_exec("ln -s /sauvegarde/$username /home/$username/sauvegarde");
 //                echo $test;
+                ChromePhp::log("Essaie avec le script en brut.");
 
 //                ChromePhp::log($test);
 //                ChromePhp::log('Commande :');
@@ -61,6 +62,7 @@ if (isset($_POST['register'])) {
             } catch (exception $e) {
                 echo $e->getMessage();
                 echo '<p class="error">Something went trully wrong!</p>';
+                ChromePhp::log("Erreur lors du try catch.");
             }
         } else {
             echo '<p class="error">Something went wrong!</p>';
