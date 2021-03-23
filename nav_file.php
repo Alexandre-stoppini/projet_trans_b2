@@ -6,7 +6,6 @@ include_once('includes/front/header.php');
 
     <?php
     $result = shell_exec("ls /home/rempart/");
-    ChromePhp::log($result);
     echo $result;
     ?>
 
