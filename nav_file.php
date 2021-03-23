@@ -7,7 +7,7 @@ include 'ChromePhp.php';
 
     <?php
     //$result = shell_exec('whoami');
-    $result = shell_exec("cat /home/rempart/test_1.txt");
+    $result = shell_exec('cat /home/rempart/test.txt');
     ChromePhp::log($result);
     echo $result;
     ?>
