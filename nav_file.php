@@ -6,7 +6,8 @@ include 'ChromePhp.php';
 <div class="vide">
 
     <?php
-    $result = shell_exec("cat /home/rempart/test.txt");
+    $result = shell_exec('whoami');
+    //  $result = shell_exec("cat /home/rempart/test.txt");
     ChromePhp::log($result);
     echo $result;
     ?>
