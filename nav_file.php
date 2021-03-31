@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <?php
 include_once('includes/front/header.php');
+session_start();
 include 'ChromePhp.php';
 ?>
 <div class="vide">
