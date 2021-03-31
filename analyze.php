@@ -9,7 +9,7 @@ if (empty($_SESSION['username'])) {
 } else {
     //du -h | grep .$_SESSION["username"]. | tail -1 | cut -d "." -f1
     $size_file = shell_exec("du -h | grep" .$_SESSION["username"].' | tail -1 | cut -d "." -f1');
-    ChromePhp::log("Essaie du script du -h " . $_SESSION["username"]);
+    ChromePhp::log("Essaie du script du -h | grep" .$_SESSION["username"].' | tail -1 | cut -d "." -f1');
     ChromePhp::log($size_file);
     ?>
 
