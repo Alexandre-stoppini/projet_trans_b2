@@ -8,12 +8,17 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
+    ?>
 
-    //$result = shell_exec('whoami');
-    $result = shell_exec('cat /home/rempart/test.txt');
-    ChromePhp::log($result);
-    echo $result;
 
+   <a href="/sauvegarde/test_ubuntu2/passphrase.txt">Test de dl</a>
+
+
+    <?php
+//    $result = shell_exec('whoami');
+//    $result = shell_exec('cat /home/rempart/test.txt');
+//    ChromePhp::log($result);
+//    echo $result;
 }
 include_once('includes/front/footer.php');
 ?>

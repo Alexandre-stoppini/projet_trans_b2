@@ -18,9 +18,9 @@ session_start();
         <a href="login.php">Login</a>
         <a href="registration.php">Registration</a>
         <?php
-        if (!empty($_SESSION['username'])){
+        if (!empty($_SESSION['username'])) {
             ?>
-        <a href="nav_file.php">Explorateur de fichiers</a>
+            <a href="nav_file.php">Explorateur de fichiers</a>
             <?php
         }
         ?>
