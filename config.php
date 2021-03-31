@@ -8,5 +8,4 @@ try {
 } catch (PDOException $e) {
     exit("Error: " . $e->getMessage());
 }
-//test
 ?>
