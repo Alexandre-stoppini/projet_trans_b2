@@ -8,10 +8,11 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
+    $test = shell_exec('whoami')
     ?>
 
 
-   <a href="download.php?path=86.213.73.59/sauvegarde/devatom/rempart/test.txt" id="dl_serv">Test de dl</a>
+   <a href="download.php?path=/home/sauvegarde/devatom/rempart/test.txt" id="dl_serv">Test de dl</a>
     <p>test</p>
 
 
