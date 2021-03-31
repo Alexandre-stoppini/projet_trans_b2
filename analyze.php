@@ -10,7 +10,8 @@ if (empty($_SESSION['username'])) {
     //du -h | grep .$_SESSION["username"]. | tail -1 | cut -d "." -f1
 //    $size_file = shell_exec('du -h | grep \''.$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
     // du -sh "/home/devatom" | tail -1 | cut -d "/" -f1
-    $commande ='ls /var/sauvegarde/devatom';
+    // fonctionne : ls /var/sauvegarde/devatom
+    $commande ='ls /sauvegarde/devatom';
     echo $commande;
 
     $size_file = shell_exec("$commande");
