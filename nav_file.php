@@ -11,7 +11,7 @@ if (empty($_SESSION['username'])) {
     ?>
 
 
-   <a href="download.php?path=/sauvegarde/test_ubuntu2/passphrase.txt" id="dl_serv">Test de dl</a>
+   <a href="download.php?path=/sauvegarde/test_ubuntu2/passphrae.txt" id="dl_serv">Test de dl</a>
     <p>test</p>
 
 
