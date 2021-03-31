@@ -10,6 +10,8 @@ header, footer {
     text-align: center;
     vertical-align: middle;
     line-height: 150px;
+    position: absolute;
+    top: 0;
 }
 
 #footer {
@@ -37,5 +39,5 @@ body {
 }
 #page-container {
     position: relative;
-    min-height: 100vh;
+    min-height: 100%;
 }
