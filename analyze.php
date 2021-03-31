@@ -7,8 +7,9 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
-    $size_file = shell_exec("du -h " . $_SESSION["username"]);
-    ChromePhp::log("Essaie du script du -h" . $_SESSION["username"]);
+    //du -h | grep .$_SESSION["username"]. | tail -1 | cut -d "." -f1
+    $size_file = shell_exec("du -h | grep" .$_SESSION["username"].' | tail -1 | cut -d "." -f1');
+    ChromePhp::log("Essaie du script du -h " . $_SESSION["username"]);
     ChromePhp::log($size_file);
     ?>
 
