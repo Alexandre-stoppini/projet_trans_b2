@@ -13,7 +13,7 @@ if (empty($_SESSION['username'])) {
     // fonctionne : ls /var/sauvegarde/devatom
     $commande ='ls /sauvegarde/devatom';
     echo $commande;
- $test =    file_get_contents("/test.txt");
+ $test =    file_get_contents("/sauvegarde/test.txt");
 echo $test;
     $size_file = shell_exec("$commande");
 
