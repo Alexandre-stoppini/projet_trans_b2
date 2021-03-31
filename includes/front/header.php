@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="FR-fr">
 <head>
@@ -14,6 +17,13 @@
         <a href="./">Home</a>
         <a href="login.php">Login</a>
         <a href="registration.php">Registration</a>
+        <?php
+        if (!empty($_SESSION['username'])){
+            ?>
+        <a href="nav_file.php">Explorateur de fichiers</a>
+            <?php
+        }
+        ?>
     </div>
 </header>
 <div id="page-container">
