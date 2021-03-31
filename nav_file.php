@@ -1,8 +1,12 @@
-<link rel="stylesheet" href="assets/css/style.css">
 <?php
 include_once('includes/front/header.php');
-session_start();
 include 'ChromePhp.php';
+session_start();
+if (empty($_SESSION['username'])) {
+    ?>
+    <meta http-equiv="refresh" content="1; URL=86.123.73.59">
+    <?php
+} else {
 ?>
 <div class="vide">
 
@@ -16,5 +20,6 @@ include 'ChromePhp.php';
 
 </div>
 <?php
+}
 include_once('includes/front/footer.php');
 ?>
