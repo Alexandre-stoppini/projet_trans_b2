@@ -12,7 +12,7 @@ if (empty($_SESSION['username'])) {
     $commande ='du -h | grep "devatom" | tail -1 | cut -d "." -f1';
     echo $commande;
 
-    $size_file = shell_exec("du -sh");
+    $size_file = shell_exec("du -sh 'devatom'");
 
     ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
     ChromePhp::log($size_file);
