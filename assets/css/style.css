@@ -10,6 +10,12 @@ header, footer {
     text-align: center;
     vertical-align: middle;
     line-height: 150px;
+
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
 }
 
 a {
@@ -30,6 +36,12 @@ body {
     text-align: center;
 
 }
+
 .vide{
     height: 550px;
+=======
+#page-container {
+    position: relative;
+    min-height: 100vh;
+
 }
