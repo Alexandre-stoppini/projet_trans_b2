@@ -18,6 +18,10 @@ header, footer {
     bottom: 0;
 }
 
+#dl_serv{
+    color: black;
+}
+
 a {
     margin: 20px;
     color: whitesmoke;
