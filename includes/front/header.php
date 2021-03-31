@@ -19,6 +19,7 @@ session_start();
         <a href="registration.php">Registration</a>
         <?php
         if (!empty($_SESSION['username'])) {
+
             ?>
             <a href="nav_file.php">Explorateur de fichiers</a>
             <a href="analyze.php">Analyse de l'espace serveur</a>
