@@ -12,6 +12,7 @@ if (isset($_POST['register'])) {
     $telephone = $_POST['telephone'];
     $password = $_POST['password'];
     $password_rep = $_POST['password_rep'];
+    $ip = $_POST['ip'];
     $error = 0;
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
     $verifMail = $connection->prepare("SELECT * FROM users WHERE email=:email");
@@ -28,18 +29,26 @@ if (isset($_POST['register'])) {
         echo '<p class="error">The username is already registered!</p>';
         $error++;
     }
+    $verifIP = $connection->prepare("SELECT * FROM users where ip=:ip");
+    $verifIP->bindParam("ip",$ip, PDO::PARAM_STR);
+    $verifIP->execute();
+    if ($verifIP->rowCount() > 0) {
+        echo '<p class="error">Error with the IP contact an administrator.</p>';
+        $error++;
+    }
     if ($_POST['password_rep'] != $_POST['password']) {
         echo '<p class="error">Passwords mismatch</p>';
         $error++;
     }
     if ($error == 0) {
-        $query = $connection->prepare("INSERT INTO users(username, address, company, email, telephone ,password) VALUES (:username, :address, :company, :email, :telephone,:password_hash)");
+        $query = $connection->prepare("INSERT INTO users(username, address, company, email, telephone ,password, ip) VALUES (:username, :address, :company, :email, :telephone,:password_hash, :ip)");
         $query->bindParam("username", $username, PDO::PARAM_STR);
         $query->bindParam("address", $address, PDO::PARAM_STR);
         $query->bindParam("company", $company, PDO::PARAM_STR);
         $query->bindParam("email", $email, PDO::PARAM_STR);
         $query->bindParam("telephone", $telephone, PDO::PARAM_INT);
         $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
+        $query->bindParam("ip",$ip,PDO::PARAM_STR);
         $result = $query->execute();
         if ($result) {
             try {
