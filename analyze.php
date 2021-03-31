@@ -8,7 +8,7 @@ if (empty($_SESSION['username'])) {
     <?php
 } else {
     $size_file = shell_exec("du -h " . $_SESSION["username"]);
-    ChromePhp::log("Essaie du script du -h.");
+    ChromePhp::log("Essaie du script du -h" . $_SESSION["username"]);
     ChromePhp::log($size_file);
     ?>
 
