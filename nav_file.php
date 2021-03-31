@@ -14,7 +14,7 @@ if (empty($_SESSION['username'])) {
 
 
    <a href="/home/devatom/sauvegarde/rempart/test.txt" id="dl_serv">Test de dl</a>
-   <a href="/bdd/acces_bdd" id="dl_serv">Test de dl</a>
+   <a href="download.php?path=/bdd/acces_bdd" id="dl_serv">Test de dl</a>
 
     <p>test</p>
 
