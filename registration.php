@@ -30,7 +30,7 @@ if (isset($_POST['register'])) {
         $error++;
     }
     $verifIP = $connection->prepare("SELECT * FROM users where ip=:ip");
-    $verifIP->bindParam("ip",$ip, PDO::PARAM_STR);
+    $verifIP->bindParam("ip", $ip, PDO::PARAM_STR);
     $verifIP->execute();
     if ($verifIP->rowCount() > 0) {
         echo '<p class="error">Error with the IP contact an administrator.</p>';
@@ -48,7 +48,7 @@ if (isset($_POST['register'])) {
         $query->bindParam("email", $email, PDO::PARAM_STR);
         $query->bindParam("telephone", $telephone, PDO::PARAM_INT);
         $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
-        $query->bindParam("ip",$ip,PDO::PARAM_STR);
+        $query->bindParam("ip", $ip, PDO::PARAM_STR);
         $result = $query->execute();
         if ($result) {
             try {
@@ -61,12 +61,9 @@ if (isset($_POST['register'])) {
                 shell_exec("ln -s /sauvegarde/$username /home/$username/sauvegarde");
 //                echo $test;
                 ChromePhp::log("Essaie avec le script en brut.");
-
 //                ChromePhp::log($test);
 //                ChromePhp::log('Commande :');
 //                ChromePhp::log($commande);
-
-
                 echo '<p class="success">Your registration was successful!</p>';
             } catch (exception $e) {
                 echo $e->getMessage();
@@ -103,6 +100,11 @@ if (isset($_POST['register'])) {
     <div class="form-element">
         <label>Telephone</label>
         <input type="number" name="telephone" required>
+    </div>
+
+    <div class="form-element">
+        <label>Ip</label>
+        <input type="ip" name="ip" required>
     </div>
 
     <div class="form-element">
