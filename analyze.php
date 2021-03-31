@@ -13,6 +13,8 @@ if (empty($_SESSION['username'])) {
 
     ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
     ChromePhp::log($size_file);
+    ChromePhp::log("whoami");
+    echo $size_file;
     ?>
 
     <p>Analyse des données serveurs :</p>
