@@ -14,7 +14,7 @@ if (empty($_SESSION['username'])) {
     $commande ='ls /sauvegarde/devatom';
     echo $commande;
 
-    $size_file = exec("$commande");
+    $size_file = shell_exec("$commande");
 
 //    ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
     ChromePhp::log($size_file);
