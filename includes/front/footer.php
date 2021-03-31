@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
-<footer>
+<footer id="footer">
 
 </footer>
-
+</div>
 </body>
 <script src="assets/js/script.js"></script>

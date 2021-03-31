@@ -16,3 +16,4 @@
         <a href="registration.php">Registration</a>
     </div>
 </header>
+<div id="page-container">
