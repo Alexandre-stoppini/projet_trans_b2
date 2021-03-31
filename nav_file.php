@@ -4,7 +4,7 @@ include 'ChromePhp.php';
 session_start();
 if (empty($_SESSION['username'])) {
     ?>
-    <meta http-equiv="refresh" content="1; URL=86.123.73.59">
+    <meta http-equiv="refresh" content="1; URL=">
     <?php
 } else {
 ?>
