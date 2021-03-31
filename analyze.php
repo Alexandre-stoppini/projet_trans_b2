@@ -11,15 +11,16 @@ if (empty($_SESSION['username'])) {
 //    $size_file = shell_exec('du -h | grep \''.$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
     // du -sh "/home/devatom" | tail -1 | cut -d "/" -f1
     // fonctionne : ls /var/sauvegarde/devatom
-    $commande ='ls /etc';
+    $commande ='ls /sauvegarde/devatom';
     echo $commande;
- $test =    file_get_contents("/etc");
+ $test =    file_get_contents("/sauvegarde/test.txt");
 echo $test;
     $size_file = shell_exec("$commande");
 
 //    ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
     ChromePhp::log($size_file);
     ChromePhp::log(shell_exec("whoami"));
+    ChromePhp::log($test);
     echo $size_file;
     ?>
 
