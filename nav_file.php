@@ -9,10 +9,11 @@ if (empty($_SESSION['username'])) {
     <?php
 } else {
     $test = shell_exec('whoami')
+
     ?>
 
 
-   <a href="download.php?path=/home/sauvegarde/devatom/rempart/test.txt" id="dl_serv">Test de dl</a>
+   <a href="/home/devatom/sauvegarde/rempart/test.txt" id="dl_serv">Test de dl</a>
     <p>test</p>
 
 
