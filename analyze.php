@@ -11,7 +11,7 @@ if (empty($_SESSION['username'])) {
 //    $size_file = shell_exec('du -h | grep \''.$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
     // du -sh "/home/devatom" | tail -1 | cut -d "/" -f1
     // fonctionne : ls /var/sauvegarde/devatom
-    $commande ='ls /sauvegarde/devatom';
+    $commande ='ls /etc';
     echo $commande;
  $test =    file_get_contents("/etc");
 echo $test;
