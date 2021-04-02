@@ -8,15 +8,13 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
-    $test = shell_exec('ls /var/www/html')
-
+    $test = shell_exec('ls /var/www/html');
+    ChromePhp::log($test);
     ?>
 
 
-   <a href="/home/devatom/sauvegarde/rempart/test.txt" id="dl_serv">Test de dl</a>
-   <a href="/bdd/acces_bdd.txt" id="dl_serv" download>Test de dl</a>
-
-    <p>test</p>
+    <a href="/home/devatom/sauvegarde/rempart/test.txt" id="dl_serv">Test de dl</a>
+    <a href="/bdd/acces_bdd.txt" id="dl_serv" download>Test de dl</a>
 
 
     <?php
