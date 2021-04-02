@@ -18,7 +18,7 @@ header, footer {
     bottom: 0;
 }
 
-#dl_serv{
+#dl_serv {
     color: black;
 }
 
@@ -28,11 +28,10 @@ a {
     text-decoration: none;
 }
 
-a:hover
-{
-    color:#00A0C6;
-    text-decoration:none;
-    cursor:pointer;
+a:hover {
+    color: #00A0C6;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -41,6 +40,10 @@ body {
 
 }
 
+main {
+    position: relative;
+    max-height: calc(100vh - 150px);
+}
 
 #page-container {
     position: relative;
