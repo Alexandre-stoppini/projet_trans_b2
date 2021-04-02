@@ -64,6 +64,11 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
         if ($result) {
             try {
+                if ($distri == "unix") {
+                    ChromePhp::log("Execution de la commande de Alexis");
+                } else {
+                    ChromePhp::log("Distrib windows, pas d'exec de commande spécifique");
+                }
 //                $commande = "/bin/bash /usr/local/bin/newuser.sh " . $username . " " . $password;
 //               $test = exec($commande);
 //                shell_exec("useradd $username -d /home/$username -m");
