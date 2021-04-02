@@ -29,7 +29,6 @@ if (empty($_SESSION['username'])) {
 
 
 }
-include_once("includes/front/footer.php");
 ?>
 
 </body>

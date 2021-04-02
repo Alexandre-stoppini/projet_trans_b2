@@ -25,5 +25,3 @@ if (empty($_SESSION['username'])) {
 //    ChromePhp::log($result);
 //    echo $result;
 }
-include_once('includes/front/footer.php');
-?>

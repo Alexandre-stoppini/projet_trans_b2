@@ -37,7 +37,3 @@ if (isset($_POST['login'])) {
     <button type="submit" name="login" value="login">Log In</button>
 </form>
 
-<?php
-include_once("includes/front/footer.php"); ?>
-
-

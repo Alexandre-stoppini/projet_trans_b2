@@ -23,4 +23,3 @@ session_start();
 
 
 
-include_once("includes/front/footer.php");
