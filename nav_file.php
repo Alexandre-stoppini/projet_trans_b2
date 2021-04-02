@@ -10,6 +10,7 @@ if (empty($_SESSION['username'])) {
 } else {
     $test = shell_exec('ls /var/www/html');
     ChromePhp::log($test);
+    ChromePhp::log(gettype($test));
     ?>
 
 
