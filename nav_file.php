@@ -13,7 +13,7 @@ if (empty($_SESSION['username'])) {
     ChromePhp::log(gettype($test));
     echo $test;
     $test_array = preg_grep("[^ ]*", $test);
-    ChromePhp::log("Tableau de test : ".$test_array);
+    ChromePhp::log("Tableau de test : ".$test_array[0]." et ".$test_array[1]);
     ?>
 
 
