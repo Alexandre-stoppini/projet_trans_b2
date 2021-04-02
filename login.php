@@ -39,6 +39,5 @@ if (isset($_POST['login'])) {
 
 <?php
 include_once("includes/front/footer.php"); ?>
-</body>
-</html>
+
 

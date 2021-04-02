@@ -15,7 +15,7 @@ header, footer {
 
 #footer {
     position: absolute;
-    bottom: 0;
+    bottom: 150px;
 }
 
 #dl_serv{
@@ -44,6 +44,5 @@ body {
 
 #page-container {
     position: relative;
-    min-height: 100vh;
-
+    max-height: calc(100vh - 150px);
 }
