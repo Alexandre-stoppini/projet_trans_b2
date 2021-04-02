@@ -14,8 +14,8 @@ header, footer {
 }
 
 #footer {
-    position: absolute;
-    bottom: -150px;
+    position: sticky;
+    bottom: 0px;
 }
 
 #dl_serv {
