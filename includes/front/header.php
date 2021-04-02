@@ -15,14 +15,19 @@ session_start();
 <header>
     <div id="header">
         <a href="./">Home</a>
-        <a href="login.php">Login</a>
-        <a href="registration.php">Registration</a>
         <?php
-        if (!empty($_SESSION['username'])) {
+        if (empty($_SESSION['username'])) {
+            ?>
+            <a href="login.php">Login</a>
+            <a href="registration.php">Registration</a>
+            ?>
+            <?php
+        } else {
 
             ?>
             <a href="nav_file.php">Explorateur de fichiers</a>
             <a href="analyze.php">Analyse de l'espace serveur</a>
+            <a href="logout.php">Logout</a>
             <?php
         }
         ?>
