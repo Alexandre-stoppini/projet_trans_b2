@@ -148,8 +148,7 @@ if (isset($_POST['register'])) {
     <button type="submit" name="register" value="register">Register</button>
 </form>
     </main>
-<?php
-include_once("includes/front/footer.php"); ?>
+
 </body>
 </html>
 
