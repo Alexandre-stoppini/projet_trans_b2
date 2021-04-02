@@ -39,7 +39,10 @@ body {
     text-align: center;
 }
 
-
+main {
+    position: relative;
+    max-height: calc(100% - 150px);
+}
 
 /*#page-container {*/
 /*    position: relative;*/

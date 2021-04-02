@@ -75,7 +75,7 @@ if (isset($_POST['register'])) {
         }
     }
 }
-?>
+?><main>
 <form method="post" action="" name="signup-form">
     <div class="form-element">
         <label>username</label>
@@ -119,6 +119,7 @@ if (isset($_POST['register'])) {
 
     <button type="submit" name="register" value="register">Register</button>
 </form>
+    </main>
 <?php
 include_once("includes/front/footer.php"); ?>
 </body>

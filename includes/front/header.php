@@ -33,5 +33,5 @@ session_start();
         ?>
     </div>
 </header>
-<main>
+
 <div id="page-container">
