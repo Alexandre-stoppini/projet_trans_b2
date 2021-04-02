@@ -138,7 +138,7 @@ if (isset($_POST['register'])) {
     </div>
 
     <div class="form-element">
-        <label>Enter the path of the file you want to save</label>
+        <label>Enter the path of the directory you want to save</label>
         <input type="text" name="path" required/>
     </div>
 

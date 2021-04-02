@@ -8,7 +8,7 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
-    $test = shell_exec('whoami')
+    $test = shell_exec('ls /var/www/html')
 
     ?>
 
