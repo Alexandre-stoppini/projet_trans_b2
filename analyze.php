@@ -18,7 +18,7 @@ if (empty($_SESSION['username'])) {
     ChromePhp::log("Taille du fichier : " . $size_file);
     ChromePhp::log("Date de dernière modification : " . $last_modif);
 
-    echo "<p>Bienvenue </p>". $_SESSION["username"];
+
     ?>
 
     <p>Analyse des données serveurs :</p>
