@@ -8,7 +8,7 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
-    $test = shell_exec('ls /var/www/html');
+    $test = shell_exec('ls /var/sauvegarde');
     ChromePhp::log($test);
     ChromePhp::log(gettype($test));
     echo $test;
@@ -16,8 +16,6 @@ if (empty($_SESSION['username'])) {
     ChromePhp::log("Tableau de test : " . $test_array[0] . " et " . $test_array[1]);
     for ($i = 0; $i < count($test_array); $i++) {
         echo "<p>" . $test_array[$i] ."</p>";
-
-
     }
     ?>
 
