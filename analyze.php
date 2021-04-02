@@ -13,7 +13,7 @@ if (empty($_SESSION['username'])) {
     $commande_size = 'sudo du -sh /sauvegarde '/*| tail -1 | cut -d "/" -f1'*/;
     $size_file = exec("$commande_size");
 
-    $commande_last_modif = "stat -c %y /sauvegarde" . $_SESSION["username"] . " | cut -d '.' -f1";
+    $commande_last_modif = "stat -c %y /sauvegarde/" . $_SESSION["username"] . " | cut -d '.' -f1";
     $last_modif = exec("$commande_last_modif");
 
     ChromePhp::log("Commande executée : " .$commande_size);
