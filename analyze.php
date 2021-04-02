@@ -7,20 +7,18 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
-
+    echo 'Bienvenue ' .$_SESSION["username"];
     //
     //'du -h | grep \''.$_SESSION["username"].'\' | tail -1 | cut -d "." -f1'
     // fonctionne : ls /var/sauvegarde/devatom
     // pour les tests : 'ls /var/test/devatom'
     $commande_last_modif = "stat -c %y /home/devatom | cut -d '.' -f1";
     $commande_size = 'du -sh "/home/devatom" | tail -1 | cut -d "/" -f1';
-    echo $commande_size;
     $size_file = shell_exec("$commande_size");
 //    ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
     ChromePhp::log("Taille du fichier : " . $size_file);
     ChromePhp::log("Qui suis-je ?" . shell_exec("whoami"));
     ChromePhp::log("Date de dernière modification : " . $commande_last_modif);
-    echo $size_file;
     ?>
 
     <p>Analyse des données serveurs :</p>
