@@ -12,8 +12,10 @@ if (empty($_SESSION['username'])) {
     ChromePhp::log($test);
     ChromePhp::log(gettype($test));
     echo $test;
-    $test_array = preg_split("[^\s]*", $test);
+    $test_array = preg_split("/[\s,]+/", $test);
     ChromePhp::log("Tableau de test : ".$test_array[0]." et ".$test_array[1]);
+    print_r($test_array);
+
     ?>
 
 
