@@ -15,7 +15,9 @@ if (empty($_SESSION['username'])) {
     $commande_last_modif = "stat -c %y /sauvegarde/" . $_SESSION["username"] . " | cut -d '.' -f1";
     $last_modif = exec("$commande_last_modif");
 
+    ChromePhp::log("Commande executée : " .$commande_size);
     ChromePhp::log("Taille du fichier : " . $size_file);
+    ChromePhp::log("Commande executée : " .$commande_last_modif);
     ChromePhp::log("Date de dernière modification : " . $last_modif);
 
 
