@@ -20,6 +20,7 @@ if (empty($_SESSION['username'])) {
     ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
 //
 //
+    ChromePhp::log(shell_exec('stat -c %y /sauvegarde/devatom | cut -d '.' -f1'));
    ChromePhp::log("Taille du fichier : " . $size_file);
     ChromePhp::log("Qui suis-je ?" . shell_exec("whoami"));
    ChromePhp::log("Date de dernière modification : " . $last_modif);
