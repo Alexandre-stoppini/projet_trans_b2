@@ -16,7 +16,7 @@ if (empty($_SESSION['username'])) {
 //    $commande_size = 'du -sh "/var/sauvegarde/devatom" | tail -1 | cut -d "/" -f1';
 //    $size_file = shell_exec("$commande_size");
 //
-////    ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
+//    ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
 //
 //
 //    ChromePhp::log("Taille du fichier : " . $size_file);
