@@ -11,6 +11,7 @@ if (empty($_SESSION['username'])) {
     $test = shell_exec('ls /var/www/html');
     ChromePhp::log($test);
     ChromePhp::log(gettype($test));
+    echo $test;
     ?>
 
 
