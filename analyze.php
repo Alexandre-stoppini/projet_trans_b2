@@ -17,12 +17,24 @@ if (empty($_SESSION['username'])) {
    $commande_size = 'du -sh "/sauvegarde/devatom" | tail -1 | cut -d "/" -f1';
    $size_file = shell_exec("$commande_size");
 //
-//    ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
+    ChromePhp::log('Essaie du script : du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
+    ChromePhp::log('Test pour comparaison :du -sh "/sauvegarde/devatom" | tail -1 | cut -d "/" -f1');
 //
 //
    ChromePhp::log("Taille du fichier : " . $size_file);
     ChromePhp::log("Qui suis-je ?" . shell_exec("whoami"));
    ChromePhp::log("Date de dernière modification : " . $last_modif);
+//    $commande_last_modif = 'stat -c %y /sauvegarde/\''. $_SESSION["username"] .'\' | cut -d '.' -f1';
+//    $last_modif = shell_exec("$commande_last_modif");
+//    $commande_size = 'du -sh "/sauvegarde/\''. $_SESSION["username"] .'\'" | tail -1 | cut -d "/" -f1';
+//    $size_file = shell_exec("$commande_size");
+
+//    ChromePhp::log('Essaie du script du -h | grep \'' .$_SESSION["username"].'\' | tail -1 | cut -d "." -f1');
+
+//    ChromePhp::log(shell_exec('stat -c %y /sauvegarde/devatom | cut -d '.' -f1'));
+//    ChromePhp::log("Taille du fichier : " . $size_file);
+//    ChromePhp::log("Qui suis-je ?" . shell_exec("whoami"));
+//    ChromePhp::log("Date de dernière modification : " . $last_modif);
     ?>
 
     <p>Analyse des données serveurs :</p>
