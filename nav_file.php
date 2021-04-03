@@ -22,7 +22,7 @@ if (empty($_SESSION['username'])) {
 
  //  explore("/opt/scripts");
     $chemin = json_decode(shell_exec("tree -J /opt/scripts"));
-    echo $chemin;
+    echo $chemin[0];
     ?>
 
 
