@@ -70,7 +70,6 @@ if (isset($_POST['register'])) {
                     ChromePhp::log("Distrib windows, pas d'exec de commande spécifique");
                 }
 
-                    ChromePhp::log(shell_exec("ls /opt/scripts"));
 //                $commande = "/bin/bash /usr/local/bin/newuser.sh " . $username . " " . $password;
 //               $test = exec($commande);
 //                shell_exec("useradd $username -d /home/$username -m");
