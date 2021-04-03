@@ -1,5 +1,4 @@
 <?php
-include 'ChromePhp.php';
 function explore($path)
     /* TODO : faire de $path une variable global et penser et à la supprimer dans logout*/
 {
@@ -11,7 +10,8 @@ function explore($path)
         if (shell_exec("-d " . $chemin_array[$i])) {
             echo "directory";
         } else {
-            ChromePhp::log(shell_exec("-d " . $chemin_array[$i]));
+            $test = shell_exec("-d " . $chemin_array[$i]);
+            echo "test : " . $test;
             echo "file";
         }
     }
