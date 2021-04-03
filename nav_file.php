@@ -20,7 +20,8 @@ if (empty($_SESSION['username'])) {
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
 
-  explore("/var/www/html/projet_trans_b2");
+ echo explore("/var/www/html/projet_trans_b2");
+
 //    $chemin = (shell_exec("tree -J /opt/scripts"));
 //
 //    var_dump(json_encode($chemin)[0]);
