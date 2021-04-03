@@ -19,12 +19,10 @@ if (empty($_SESSION['username'])) {
 //
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
-    $chemin = shell_exec("tree -J /opt/scripts");
-    $chemin_array = preg_split("/[{]+/", $chemin);
-    for ($i = 1; $i < count($chemin_array); $i++) {
-        echo $chemin_array[$i];
-    }
-//    explore("/");
+
+ //  explore("/opt/scripts");
+    $chemin = json_decode(shell_exec("tree -J /opt/scripts"));
+    echo $chemin;
     ?>
 
 

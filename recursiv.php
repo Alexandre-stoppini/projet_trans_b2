@@ -20,7 +20,11 @@ function explore($path)
 //            echo $chemin_array[$i];
 //        }
 //    }
-
+    $chemin = json_decode(shell_exec("tree -J $path"));
+    $chemin_array = preg_split("/[{]+/", $chemin);
+    for ($i = 1; $i < count($chemin_array); $i++) {
+        echo $chemin_array[$i];
+    }
 
 
 
