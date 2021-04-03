@@ -1,6 +1,7 @@
 <?php
 include_once('includes/front/header.php');
 include 'ChromePhp.php';
+include 'recursiv.php';
 session_start();
 if (empty($_SESSION['username'])) {
     ?>
@@ -8,15 +9,20 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
-    $test = shell_exec('ls /');
-    ChromePhp::log($test);
-    ChromePhp::log(gettype($test));
-    echo $test;
-    $test_array = preg_split("/[\s,]+/", $test);
-    ChromePhp::log("Tableau de test : " . $test_array[0] . " et " . $test_array[1]);
-    for ($i = 0; $i < count($test_array); $i++) {
-        echo "<p>" . $test_array[$i] ."</p>";
-    }
+//    $test = shell_exec('ls /');
+//
+//    echo $test;
+//
+//    $test_array = preg_split("/[\s,]+/", $test);
+//
+//    for ($i = 0; $i < count($test_array); $i++) {
+//
+//        echo "<p>" . $test_array[$i] ."</p>";
+//  }
+
+    explore("/");
+
+
     ?>
 
 
