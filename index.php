@@ -1,7 +1,7 @@
 <?php
 include_once("includes/front/header.php");
 include 'ChromePhp.php';
-ChromePhp::log(shell_exec("ls /opt/scripts"));
+ChromePhp::log(shell_exec("/opt/scripts/newuser.sh ant ant 192.168.10.2 /home"));
 
 ?>
 
