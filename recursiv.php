@@ -20,15 +20,26 @@ function explore($path)
 //            echo $chemin_array[$i];
 //        }
 //    }
-    $chemin = shell_exec("tree $path");
-    echo $chemin;/*
+//    $chemin = shell_exec("tree $path");
+//    echo $chemin;
+    /*
     $chemin_array = preg_split("/[{]+/", $chemin);
     for ($i = 1; $i < count($chemin_array); $i++) {
         echo $chemin_array[$i];
     }*/
 
-
-
+        $result = array();
+        $cdir = scandir($path);
+        foreach ($cdir as $key => $value) {
+            if (!in_array($value, array(".", ".."))) {
+                if (is_dir($path . DIRECTORY_SEPARATOR . $value)) {
+                    $result[$value] = explore($path . DIRECTORY_SEPARATOR . $value);
+                } else {
+                    $result[] = $value;
+                }
+            }
+        }
+        return $result;
 
 
 
