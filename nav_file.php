@@ -20,7 +20,9 @@ if (empty($_SESSION['username'])) {
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
 $test = shell_exec("tree -J /opt/scripts");
-echo $test;
+for ($i =0; $i < count($test) ; $i++) {
+    echo $test[$i];
+}
 //    explore("/");
 
 
