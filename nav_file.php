@@ -20,7 +20,7 @@ session_start();
     ?>
 
 
-    <a href="/home/devatom/sauvegarde/rempart" id="dl_serv" download>Test de dl</a>
+    <a href="/opt/scripts" id="dl_serv" download>Test de dl</a>
     <a href="/bdd/acces_bdd.txt" id="dl_serv" download>Test de dl</a>
 
 
