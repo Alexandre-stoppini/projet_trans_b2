@@ -19,18 +19,17 @@ if (empty($_SESSION['username'])) {
 //
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
-$test = shell_exec("tree -J /opt/scripts");
-for ($i =0; $i < count($test) ; $i++) {
-    echo $test[$i];
-}
+    $chemin = shell_exec("tree -J /opt/scripts");
+    $chemin_array = preg_split("/[{]+/", $chemin);
+    for ($i = 1; $i < count($chemin_array); $i++) {
+        echo $chemin_array[$i];
+    }
 //    explore("/");
-
-
     ?>
 
 
-<!--    <a href="/opt/scripts/newuser.sh" id="dl_serv" download>Test de dl</a>-->
-<!--    <a href="/bdd/acces_bdd.txt" id="dl_serv" download>Test de dl</a>-->
+    <!--    <a href="/opt/scripts/newuser.sh" id="dl_serv" download>Test de dl</a>-->
+    <!--    <a href="/bdd/acces_bdd.txt" id="dl_serv" download>Test de dl</a>-->
 
 
     <?php
