@@ -8,7 +8,7 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
-    $test = shell_exec('ls /var/sauvegarde');
+    $test = shell_exec('ls /');
     ChromePhp::log($test);
     ChromePhp::log(gettype($test));
     echo $test;
@@ -20,8 +20,8 @@ if (empty($_SESSION['username'])) {
     ?>
 
 
-    <a href="/opt/scripts/newuser.sh" id="dl_serv" download>Test de dl</a>
-    <a href="/bdd/acces_bdd.txt" id="dl_serv" download>Test de dl</a>
+<!--    <a href="/opt/scripts/newuser.sh" id="dl_serv" download>Test de dl</a>-->
+<!--    <a href="/bdd/acces_bdd.txt" id="dl_serv" download>Test de dl</a>-->
 
 
     <?php
