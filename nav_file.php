@@ -19,8 +19,8 @@ if (empty($_SESSION['username'])) {
 //
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
-
-    explore("/");
+ChromePhp::log(shell_exec( "-d 'bin'"));
+//    explore("/");
 
 
     ?>
