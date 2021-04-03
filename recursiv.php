@@ -10,6 +10,7 @@ function explore($path)
         if (shell_exec("-d ".$chemin_array[$i])) {
             echo "directory";
         } else {
+            echo shell_exec("-d ".$chemin_array[$i]);
             echo "file";
         }
     }
