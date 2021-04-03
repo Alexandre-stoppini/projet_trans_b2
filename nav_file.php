@@ -20,10 +20,10 @@ if (empty($_SESSION['username'])) {
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
 
- //  explore("/opt/scripts");
-    $chemin = (shell_exec("tree -J /opt/scripts"));
-
-    var_dump(json_encode($chemin)[0]);
+  explore("/opt/scripts");
+//    $chemin = (shell_exec("tree -J /opt/scripts"));
+//
+//    var_dump(json_encode($chemin)[0]);
     ?>
 
 
