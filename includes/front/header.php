@@ -16,20 +16,20 @@ session_start();
     <div id="header">
         <a href="./">Home</a>
         <?php
-        if (empty($_SESSION['username'])) {
+//        if (empty($_SESSION['username'])) {
             ?>
             <a href="login.php">Login</a>
             <a href="registration.php">Registration</a>
             ?>
             <?php
-        } else {
+//        } else {
 
             ?>
             <a href="nav_file.php">Explorateur de fichiers</a>
             <a href="analyze.php">Analyse de l'espace serveur</a>
             <a href="logout.php">Logout</a>
             <?php
-        }
+//        }
         ?>
     </div>
 </header>

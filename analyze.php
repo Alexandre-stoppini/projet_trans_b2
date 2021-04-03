@@ -1,12 +1,12 @@
 <?php
 include_once("includes/front/header.php");
 include 'ChromePhp.php';
-if (empty($_SESSION['username'])) {
+//if (empty($_SESSION['username'])) {
     ?>
-    <meta http-equiv="refresh" content="3 URL=index.php">
-    <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
+<!--    <meta http-equiv="refresh" content="3 URL=index.php">-->
+<!--    <p>Vous n'êtes pas autorisé à accéder à cette page.</p>-->
     <?php
-} else {
+//} else {
     echo 'Bienvenue ' . $_SESSION["username"];
 //    $commande_size = 'du -sh "/sauvegarde/' . $_SESSION["username"] . '/rempart" '/*| tail -1 | cut -d "/" -f1'*/;
 
@@ -31,7 +31,7 @@ if (empty($_SESSION['username'])) {
     </ul><?php
 
 
-}
+//}
 ?>
 
 </body>
