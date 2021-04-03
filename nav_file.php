@@ -19,7 +19,8 @@ if (empty($_SESSION['username'])) {
 //
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
-ChromePhp::log(shell_exec( "-d 'bin'"));
+$test = shell_exec("tree -J /opt/scripts");
+echo $test;
 //    explore("/");
 
 
