@@ -1,6 +1,5 @@
 <?php
 function explore($path)
-    /* TODO : faire de $path une variable global et penser et à la supprimer dans logout*/
 {
 
     $chemin = shell_exec("tree -fi $path");
@@ -22,7 +21,10 @@ function explore($path)
         if (preg_match('/(\.)/', $chemin_array[$i])) {
             $foo = preg_split('/(\/)/',$chemin_array[$i]);
             echo "<span><br>Votre fichier à télécharger : </span>" . $foo[count($foo)-1];
-        } else {
+        } elseif (preg_match('/(^.*->.*$)/', $chemin_array[$i])){
+
+        }
+        else {
             echo "<span><br>" . $chemin_array[$i]."</span>";
         }
     }
