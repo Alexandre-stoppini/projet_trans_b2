@@ -22,23 +22,16 @@ if (empty($_SESSION['username'])) {
     $infos = preg_split("(\s)", $size_file);
     
     if (strpos($infos[0], "K")){
-        ChromePhp::log("salut");
-        ChromePhp::log($infos[0]);
-        ChromePhp::log(preg_replace("K", "", $infos[1]));
-        $size = preg_replace("K", "", $infos[1]);
+        $size = (float)substr($infos[0], 0, -1)*0.001;
         ChromePhp::log($size);
     }
     elseif (strpos($infos[0], "M")){
-        ChromePhp::log("salut");
-        ChromePhp::log($infos[0]);
-        ChromePhp::log(substr($infos[0], 0, -1));
-        $size = substr($infos[0], 0, -1);
+        $size = (float)substr($infos[0], 0, -1);
         ChromePhp::log($size);
     }
     else{
-        ChromePhp::log("salam");
-        ChromePhp::log($infos[0]);
-        $size = (float)preg_replace("G", "", $infos[1]) * 1000;
+        $size = (float)substr($infos[0], 0, -1)*1000;
+        ChromePhp::log($size);
     }
 
     ?>
@@ -50,7 +43,7 @@ if (empty($_SESSION['username'])) {
             <div class="xLarge-7 large-7 medium-7 small-7 xsmall-7 infos">
                 <h1>Espace occupé par vos fichiers :</h1>
                 <div class="progress-bar">
-                    <div class="bar" style="width: <?php echo 100*$size ?> "></div>
+                    <div class="bar" style="width: <?php echo $size/10 ?>% "></div>
                 </div>
                 <div>
                     <h3>Volume :</h3>
