@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+body{
+    font-family: 'ubuntu' !important;
+}
 header, footer {
     background-color: black;
     opacity: 75%;
@@ -56,7 +60,7 @@ main {
 .container-infos{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
