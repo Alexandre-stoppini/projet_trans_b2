@@ -20,11 +20,11 @@ if (empty($_SESSION['username'])) {
     ChromePhp::log(exec("whoami"));
     ?>
     <div class="container">
-        <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12">
+        <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12 title">
             <p>Analyse des données serveurs :</p>
         </div>
         <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12 container-infos">
-            <div class="xLarge-6 large-6 medium-6 small-6 xsmall-6 infos">
+            <div class="xLarge-7 large-7 medium-7 small-7 xsmall-7 infos">
                 <h1>Espace occupé par vos fichiers :</h1>
                 <div class="progress-bar">
                     <div class="bar"></div>
