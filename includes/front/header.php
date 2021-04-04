@@ -25,8 +25,8 @@ session_start();
         } else {
 
             ?>
-            <a href="nav_file.php">Explorateur de fichiers</a>
             <a href="analyze.php">Analyse de l'espace serveur</a>
+            <a href="nav_file.php">Explorateur de fichiers</a>
             <a href="logout.php">Logout</a>
             <?php
         }

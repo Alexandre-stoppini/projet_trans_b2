@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
             $_SESSION['user_id'] = $result['id'];
             $_SESSION['username'] = $result['username'];
             echo '<p class="success">Congratulations, you are logged in!</p>';
-            header('Location: welcome.php');
+            header('Location: analyze.php');
         } else {
             echo '<p class="error">Username password combination is wrong!</p>';
         }
