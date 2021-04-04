@@ -130,6 +130,17 @@ main {
     text-decoration: underline;
 }
 
+.file{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.dir{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 @media only screen and (min-width: 1280px) {
     /* For wide screens: */
     .xLarge-1 {width: 8.33%;}
