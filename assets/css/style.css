@@ -64,9 +64,20 @@ main {
     align-items: center;
 }
 
-.infos{
+.info-volume{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    height: 350px;
+    background-color: #2e74a3;
+    box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+    -webkit-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+    -moz-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+}
+.info-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 350px;
     background-color: #2e74a3;
