@@ -23,11 +23,11 @@ session_start();
             <?php
         } else {
             ?>
-            <a>
+            <div>
             <?php
                 echo 'Bienvenue ' . $_SESSION["username"];
             ?>
-            </a>
+            </div>
             
             <a href="analyze.php">Analyse de l'espace serveur</a>
             <a href="nav_file.php">Explorateur de fichiers</a>
