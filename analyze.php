@@ -29,8 +29,11 @@ if (empty($_SESSION['username'])) {
         ChromePhp::log($size);
     }
     elseif (strpos($infos[0], "M")){
-        ChromePhp::log("M");
-        $size = (float)preg_replace("M", "", $infos[1]);
+        ChromePhp::log("salut");
+        ChromePhp::log($infos[0]);
+        ChromePhp::log(preg_replace("M", "", $infos[1]));
+        $size = preg_replace("M", "", $infos[1]);
+        ChromePhp::log($size);
     }
     else{
         ChromePhp::log("salam");
