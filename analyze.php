@@ -19,7 +19,7 @@ if (empty($_SESSION['username'])) {
     ChromePhp::log("Date de dernière modification : " . $last_modif);
     ChromePhp::log(exec("whoami"));
 
-    $infos = split(" ", $size_file);
+    $infos = preg_split(" ", $size_file);
     
 
 
