@@ -20,51 +20,25 @@ function explore($path)
 //            echo $chemin_array[$i];
 //        }
 //    }
-//    $chemin = shell_exec("tree $path");
-//    echo $chemin;
-    /*
-    $chemin_array = preg_split("/[{]+/", $chemin);
-    for ($i = 1; $i < count($chemin_array); $i++) {
-        echo $chemin_array[$i];
-    }*/
 
-        $result = array();
-        $cdir = scandir($path);
-        foreach ($cdir as $key => $value) {
-            if (!in_array($value, array(".", ".."))) {
-                if (is_dir($path . DIRECTORY_SEPARATOR . $value)) {
-                    $result[$value] = explore($path . DIRECTORY_SEPARATOR . $value);
-                } else {
-                    $result[] = $value;
-                }
-            }
-        }
-        return $result;
-
-
-
-}
-function scanDirectories($rootDir, $allData=array()) {
-    // set filenames invisible if you want
-    $invisibleFileNames = array(".", "..", ".htaccess", ".htpasswd");
-    // run through content of root directory
-    $dirContent = scandir($rootDir);
-    foreach($dirContent as $key => $content) {
-        // filter all files not accessible
-        $path = $rootDir.'/'.$content;
-        if(!in_array($content, $invisibleFileNames)) {
-            // if content is file & readable, add to array
-            if(is_file($path) && is_readable($path)) {
-                // save file name with path
-                $allData[] = $path;
-                // if content is a directory and readable, add path and name
-            }elseif(is_dir($path) && is_readable($path)) {
-                // recursive callback to open new directory
-                $allData = scanDirectories($path, $allData);
-            }
+    $chemin = shell_exec("tree -J $path");
+    echo $chemin;
+    $chemin_array_file = preg_split('/({"type":").*(","name":").*(})/', $chemin);
+    for ($i = 1; $i < count($chemin_array_file); $i++) {
+        if ($i % 2 == 0) {
+            echo $chemin_array_file[$i];
         }
     }
-    return $allData;
+//        $result = array();
+//        $cdir = scandir($path);
+//        foreach ($cdir as $key => $value) {
+//            if (!in_array($value, array(".", ".."))) {
+//                if (is_dir($path . DIRECTORY_SEPARATOR . $value)) {
+//                    $result[$value] = explore($path . DIRECTORY_SEPARATOR . $value);
+//                } else {
+//                    $result[] = $value;
+//                }
+//            }
+//        }
+//        return $result;
 }
-
-print_r(scanDirectories("."));

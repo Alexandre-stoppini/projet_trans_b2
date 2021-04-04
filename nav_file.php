@@ -19,9 +19,12 @@ if (empty($_SESSION['username'])) {
 //
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
-   // var_dump(explore("/var/www/html/projet_trans_b2"));
-    var_dump(scanDirectories("/var/www/html/projet_trans_b2"));
-//    $chemin = (shell_exec("tree -J /opt/scripts"));
+
+   explore("/var/www/html/projet_trans_b2");
+
+    //var_dump(scanDirectories("/var/www/html/projet_trans_b2"));
+
+    //    $chemin = (shell_exec("tree -J /opt/scripts"));
 //
 //    var_dump(json_encode($chemin)[0]);
     ?>
