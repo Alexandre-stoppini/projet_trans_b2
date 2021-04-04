@@ -17,9 +17,11 @@ session_start();
         <?php
         if (empty($_SESSION['username'])) {
             ?>
-            <a href="login.php">Login</a>
-            <a href="registration.php">Registration</a>
-            ?>
+            <div class="nav">
+                <a href="login.php">Login</a>
+                <a href="registration.php">Registration</a>
+            </div>
+            
             <?php
         } else {
             ?>
