@@ -9,6 +9,10 @@ header, footer {
     height: auto;
     font-size: 1.5rem;
 }
+header{
+    display: flex;
+    flex-direction: row;
+}
 
 #header {
     text-align: center;
