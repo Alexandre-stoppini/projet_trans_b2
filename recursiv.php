@@ -4,24 +4,21 @@ function explore($path)
 {
 
     $chemin = shell_exec("tree -J $path");
-    $chemin_array_file = preg_split('/({"type":")|(","name":")|("})|(,)|(","contents":\[)|(\[)|(]})|(report","directories":\d*,"files":\d*(})|(]))/', $chemin);
-    //var_dump($chemin_array_file);
-    for ($i = 0; $i < count($chemin_array_file); $i++) {
-        if ($chemin_array_file[$i] == "directory") {
-            echo "<span><br>Dossier : </span>";
-        } elseif ($chemin_array_file[$i] == "file") {
-            echo "<span><br>Fichier : </span>";
-        } else {
-            echo $chemin_array_file[$i];
-        }
-            //     if ($i % 2 == 0) {
-//            if ($chemin_array_file[$i] == "directory") {
-//                echo "<span><br>Dossier : </span>"/* . $chemin_array_file[$i]*/;
-//            } elseif ($chemin_array_file[$i] == "file") {
-//                echo "<span><br>Fichier : </span> " /*. $chemin_array_file[$i]*/;
-//            }
-//        } elseif ($i % 2 == 1){
-//            echo  $chemin_array_file[$i];
+//    $chemin_array_file = preg_split('/({"type":")|(","name":")|("})|(,)|(","contents":\[)|(\[)|(]})|(report","directories":\d*,"files":\d*(})|(]))/', $chemin);
+//    for ($i = 0; $i < count($chemin_array_file); $i++) {
+//        if ($chemin_array_file[$i] == "directory") {
+//            echo "<span><br>Dossier : </span>";
+//        } elseif ($chemin_array_file[$i] == "file") {
+//            echo "<span><br>Fichier : </span>";
+//        } else {
+//            echo $chemin_array_file[$i];
 //        }
+//      }
+    $chemin_array = preg_split('/(\/sauvegarde\/)|(\s->\s)/', $chemin);
+    for ($i = 0; $i < count($chemin_array); $i++) {
+        if (preg_match('/(\.)/', $chemin_array[$i])) {
+            $foo = preg_split('/(\/)/',$chemin_array[$i]);
+            echo $foo[count($foo)-1];
+        }
     }
 }
