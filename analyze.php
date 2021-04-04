@@ -8,24 +8,18 @@ if (empty($_SESSION['username'])) {
     <?php
 } else {
     echo 'Bienvenue ' . $_SESSION["username"];
-
     $commande_size = 'du -sh /sauvegarde/' . $_SESSION["username"];
     $size_file = shell_exec("$commande_size");
     $commande_last_modif = "stat -c %y /sauvegarde/" . $_SESSION["username"] . " | cut -d '.' -f1";
     $last_modif = exec("$commande_last_modif");;
-
     $infos = preg_split("(\s)", $size_file);
-    
-    if (strpos($infos[0], "K")){
-        $size = (float)substr($infos[0], 0, -1)*0.001;
-    }
-    elseif (strpos($infos[0], "M")){
+    if (strpos($infos[0], "K")) {
+        $size = (float)substr($infos[0], 0, -1) * 0.001;
+    } elseif (strpos($infos[0], "M")) {
         $size = (float)substr($infos[0], 0, -1);
+    } else {
+        $size = (float)substr($infos[0], 0, -1) * 1000;
     }
-    else{
-        $size = (float)substr($infos[0], 0, -1)*1000;
-    }
-
     ?>
     <div class="container">
         <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12 title">
@@ -35,7 +29,7 @@ if (empty($_SESSION['username'])) {
             <div class="xLarge-7 large-7 medium-7 small-7 xsmall-7 info-volume">
                 <h1>Espace occupé par vos fichiers :</h1>
                 <div class="progress-bar">
-                    <div class="bar" style="width: <?php echo $size/10 ?>% "></div>
+                    <div class="bar" style="width: <?php echo $size / 10 ?>% "></div>
                 </div>
                 <div>
                     <h3>Volume :</h3>
@@ -49,9 +43,11 @@ if (empty($_SESSION['username'])) {
             <div class="xLarge-4 large-4 medium-4 small-4 xsmall-4 info-date">
                 <h1>Date de la dernière sauvegarde :</h1>
                 <div class="date">
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            width="36.447px" height="36.447px" viewBox="0 0 36.447 36.447" style="enable-background:new 0 0 36.447 36.447;"
-                            xml:space="preserve">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="36.447px" height="36.447px" viewBox="0 0 36.447 36.447"
+                         style="enable-background:new 0 0 36.447 36.447;"
+                         xml:space="preserve">
                         <g>
                             <g>
                                 <path d="M30.224,3.948h-1.098V2.75c0-1.517-1.197-2.75-2.67-2.75c-1.474,0-2.67,1.233-2.67,2.75v1.197h-2.74V2.75
@@ -113,7 +109,7 @@ if (empty($_SESSION['username'])) {
         </div>
     </div>
 
-<?php
+    <?php
 }
 ?>
 
