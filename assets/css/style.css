@@ -148,10 +148,10 @@ main {
     width: 50px;
 }
 
-.file svg{
+.file > svg{
     height: 50px;
     width: 50px;
-    transform: rotate(90deg);
+    transform: rotate(45deg);
 }
 .file a {
     height: 50px;
