@@ -8,16 +8,11 @@ if (empty($_SESSION['username'])) {
     <?php
 } else {
     echo 'Bienvenue ' . $_SESSION["username"];
-//    $commande_size = 'du -sh "/sauvegarde/' . $_SESSION["username"] . '/rempart" '/*| tail -1 | cut -d "/" -f1'*/;
-    $commande_size = 'du -sh /sauvegarde/' . $_SESSION["username"]/*| tail -1 | cut -d "/" -f1'*/;
+
+    $commande_size = 'du -sh /sauvegarde/' . $_SESSION["username"];
     $size_file = shell_exec("$commande_size");
     $commande_last_modif = "stat -c %y /sauvegarde/" . $_SESSION["username"] . " | cut -d '.' -f1";
-    $last_modif = exec("$commande_last_modif");
-    ChromePhp::log("Commande executée : " . $commande_size);
-    ChromePhp::log("Taille du fichier : " . $size_file);
-    ChromePhp::log("Commande executée : " . $commande_last_modif);
-    ChromePhp::log("Date de dernière modification : " . $last_modif);
-    ChromePhp::log(exec("whoami"));
+    $last_modif = exec("$commande_last_modif");;
 
     $infos = preg_split("(\s)", $size_file);
     

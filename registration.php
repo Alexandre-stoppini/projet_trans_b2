@@ -5,6 +5,7 @@ include 'ChromePhp.php';
 session_start();
 include('config.php');
 if (isset($_POST['register'])) {
+
     $username = $_POST['username'];
     $address = $_POST['address'];
     $company = $_POST['company'];
@@ -15,8 +16,11 @@ if (isset($_POST['register'])) {
     $ip = $_POST['ip'];
     $path = $_POST['path'];
     $distri = $_POST['distri'];
+
     $error = 0;
+
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
     $verifMail = $connection->prepare("SELECT * FROM users WHERE email=:email");
     $verifMail->bindParam("email", $email, PDO::PARAM_STR);
     $verifMail->execute();
@@ -24,6 +28,7 @@ if (isset($_POST['register'])) {
         echo '<p class="error">The email address is already registered!</p>';
         $error++;
     }
+
     $verifUser = $connection->prepare("SELECT * FROM users WHERE username=:username");
     $verifUser->bindParam("username", $username, PDO::PARAM_STR);
     $verifUser->execute();
@@ -31,6 +36,7 @@ if (isset($_POST['register'])) {
         echo '<p class="error">The username is already registered!</p>';
         $error++;
     }
+
     $verifIP = $connection->prepare("SELECT * FROM users where ip=:ip");
     $verifIP->bindParam("ip", $ip, PDO::PARAM_STR);
     $verifIP->execute();
@@ -38,10 +44,12 @@ if (isset($_POST['register'])) {
         echo '<p class="error">Error with the IP contact an administrator.</p>';
         $error++;
     }
+
     if ($_POST['password_rep'] != $_POST['password']) {
         echo '<p class="error">Passwords mismatch</p>';
         $error++;
     }
+
     if ($error == 0) {
         $query = $connection->prepare("INSERT INTO users(username, address, company, email, telephone ,password, ip, path, distri) VALUES (:username, :address, :company, :email, :telephone,:password_hash, :ip, :path, :distri)");
         $query->bindParam("username", $username, PDO::PARAM_STR);
@@ -56,27 +64,19 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
         if ($result) {
             try {
-                if ($distri == "unix") {
-                    ChromePhp::log("Execution de la commande de Alexis");
-                } else {
-                    ChromePhp::log("Distrib windows, pas d'exec de commande spécifique");
-                }
+
                 $commande = "/opt/scripts/newuser.sh " . $username . " " . $password . " " . $ip . " " . $path;
-                ChromePhp::log($commande);
                 shell_exec($commande);
                 echo '<p class="success">Your registration was successful!</p>';
             } catch (exception $e) {
                 echo $e->getMessage();
                 echo '<p class="error">Something went trully wrong!</p>';
-                ChromePhp::log("Erreur lors du try catch.");
             }
         } else {
             echo '<p class="error">Something went wrong!</p>';
         }
     }
 }
-// path du fichier à sauvegarder
-// type de dsitri
 ?>
 <main>
     <form method="post" action="" name="signup-form">
