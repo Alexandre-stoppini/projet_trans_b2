@@ -5,7 +5,7 @@ function explore($path)
     $chemin = shell_exec("tree -fi $path");
 
     $chemin_array = preg_split('/(\/sauvegarde\/)|(\d*\sdirectories,\s\d*\sfiles)/', $chemin);
-    for ($i = 0; $i < count($chemin_array); $i++) {
+    for ($i = 1; $i < count($chemin_array)-1; $i++) {
 
         // print tous les fichiers
         if (preg_match('/(\.)/', $chemin_array[$i])) {
