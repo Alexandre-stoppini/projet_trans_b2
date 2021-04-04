@@ -156,7 +156,7 @@ main {
 .file > div {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
 }
 .file a, .file svg {
     height: 30px;
