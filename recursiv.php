@@ -25,12 +25,12 @@ function explore($path)
     for ($i = 0; $i < count($chemin_array_file); $i++) {
         if ($i % 2 == 1) {
             if ($chemin_array_file[$i] == "directory") {
-                echo "\n Dossier : " . $chemin_array_file[$i];
+                echo "<p>Dossier : </p>"/* . $chemin_array_file[$i]*/;
             } elseif ($chemin_array_file[$i] == "file") {
-                echo "\n" . $chemin_array_file[$i];
+                echo "<p>Fichier </p>: " /*. $chemin_array_file[$i]*/;
             }
         } elseif ($i % 2 == 0){
-            echo "\n" . $chemin_array_file[$i];
+            echo  $chemin_array_file[$i];
         }
     }
 //        $result = array();
