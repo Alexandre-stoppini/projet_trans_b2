@@ -14,15 +14,13 @@ function explore($path)
 //            echo $chemin_array_file[$i];
 //        }
 //      }
-    $chemin_array = preg_split('/(\/sauvegarde\/)|(\s->\s)/', $chemin);
+    $chemin_array = preg_split('/(^.*->.*$)|(\/sauvegarde\/)/', $chemin);
     for ($i = 0; $i < count($chemin_array); $i++) {
 
         // print tous les fichiers
         if (preg_match('/(\.)/', $chemin_array[$i])) {
             $foo = preg_split('/(\/)/',$chemin_array[$i]);
             echo "<span><br>Votre fichier à télécharger : </span>" . $foo[count($foo)-1];
-        } elseif (preg_match('/(^.*->.*$)/', $chemin_array[$i])){
-
         }
         else {
             echo "<span><br>" . $chemin_array[$i]."</span>";
