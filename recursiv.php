@@ -10,7 +10,7 @@ function explore($path)
         // print tous les fichiers
         if (preg_match('/(\.)/', $chemin_array[$i])) {
             $foo = preg_split('/(\/)/',$chemin_array[$i]);
-            echo "<span><br>Votre fichier à télécharger : </span>" . $foo[count($foo)-1] . "<a href='/sauvegarde/". $chemin_array ." download'>Télécharger</a>";
+            echo "<span><br>Votre fichier à télécharger : </span>" . $foo[count($foo)-1] . "<a href='/sauvegarde/". $chemin_array[$i] ." download'>Télécharger</a>";
         } else {
             echo "<span><br>" . $chemin_array[$i]."</span>";
         }
