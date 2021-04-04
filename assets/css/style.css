@@ -141,6 +141,10 @@ main {
     align-items: center;
 }
 
+.dir > a, .file > a{
+    margin: 0;
+}
+
 @media only screen and (min-width: 1280px) {
     /* For wide screens: */
     .xLarge-1 {width: 8.33%;}
