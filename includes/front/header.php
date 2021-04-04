@@ -28,7 +28,7 @@ session_start();
                 <a href="nav_file.php">Explorateur de fichiers</a>
                 <a href="logout.php">Logout</a>
             </div>
-            <div>
+            <div class="account">
                 <p>
             <?php
                 echo 'Bienvenue ' . $_SESSION["username"];

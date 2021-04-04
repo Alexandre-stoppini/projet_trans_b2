@@ -20,7 +20,13 @@ header, footer {
     flex-wrap: wrap;
 
 }
-
+.account{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
 #footer {
     position: sticky;
     bottom: 0px;
