@@ -17,8 +17,6 @@ if (isset($_POST['register'])) {
     $distri = $_POST['distri'];
     $error = 0;
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
-
-
     $verifMail = $connection->prepare("SELECT * FROM users WHERE email=:email");
     $verifMail->bindParam("email", $email, PDO::PARAM_STR);
     $verifMail->execute();
@@ -26,8 +24,6 @@ if (isset($_POST['register'])) {
         echo '<p class="error">The email address is already registered!</p>';
         $error++;
     }
-
-
     $verifUser = $connection->prepare("SELECT * FROM users WHERE username=:username");
     $verifUser->bindParam("username", $username, PDO::PARAM_STR);
     $verifUser->execute();
@@ -35,8 +31,6 @@ if (isset($_POST['register'])) {
         echo '<p class="error">The username is already registered!</p>';
         $error++;
     }
-
-
     $verifIP = $connection->prepare("SELECT * FROM users where ip=:ip");
     $verifIP->bindParam("ip", $ip, PDO::PARAM_STR);
     $verifIP->execute();
@@ -44,8 +38,6 @@ if (isset($_POST['register'])) {
         echo '<p class="error">Error with the IP contact an administrator.</p>';
         $error++;
     }
-
-
     if ($_POST['password_rep'] != $_POST['password']) {
         echo '<p class="error">Passwords mismatch</p>';
         $error++;
@@ -69,7 +61,8 @@ if (isset($_POST['register'])) {
                 } else {
                     ChromePhp::log("Distrib windows, pas d'exec de commande spécifique");
                 }
-                $commande = "/opt/scripts/newuser.sh" . $username . " " . $password . " " . $ip . " " . $path;
+                $commande = "/opt/scripts/newuser.sh " . $username . " " . $password . " " . $ip . " " . $path;
+                ChromePhp::log($commande);
                 shell_exec($commande);
                 echo '<p class="success">Your registration was successful!</p>';
             } catch (exception $e) {
@@ -82,67 +75,67 @@ if (isset($_POST['register'])) {
         }
     }
 }
-
 // path du fichier à sauvegarder
 // type de dsitri
-?><main>
-<form method="post" action="" name="signup-form">
-    <div class="form-element">
-        <label>username</label>
-        <input type="text" name="username" required/>
-    </div>
+?>
+<main>
+    <form method="post" action="" name="signup-form">
+        <div class="form-element">
+            <label>username</label>
+            <input type="text" name="username" required/>
+        </div>
 
-    <div class="form-element">
-        <label>Address</label>
-        <input type="text" name="address" required>
-    </div>
+        <div class="form-element">
+            <label>Address</label>
+            <input type="text" name="address" required>
+        </div>
 
-    <div class="form-element">
-        <label>Company</label>
-        <input type="text" name="company" required>
-    </div>
+        <div class="form-element">
+            <label>Company</label>
+            <input type="text" name="company" required>
+        </div>
 
-    <div class="form-element">
-        <label>Email</label>
-        <input type="email" name="email" required/>
-    </div>
+        <div class="form-element">
+            <label>Email</label>
+            <input type="email" name="email" required/>
+        </div>
 
-    <div class="form-element">
-        <label>Telephone</label>
-        <input type="number" name="telephone" required>
-    </div>
+        <div class="form-element">
+            <label>Telephone</label>
+            <input type="number" name="telephone" required>
+        </div>
 
-    <div class="form-element">
-        <label>Ip</label>
-        <input type="text" name="ip" required>
-    </div>
+        <div class="form-element">
+            <label>Ip</label>
+            <input type="text" name="ip" required>
+        </div>
 
-    <div class="form-element">
-        <label>Password</label>
-        <input type="password" name="password" required/>
-    </div>
+        <div class="form-element">
+            <label>Password</label>
+            <input type="password" name="password" required/>
+        </div>
 
-    <div class="form-element">
-        <label>Confirm Password</label>
-        <input type="password" name="password_rep" required/>
-    </div>
+        <div class="form-element">
+            <label>Confirm Password</label>
+            <input type="password" name="password_rep" required/>
+        </div>
 
-    <div class="form-element">
-        <label>Enter the path of the directory you want to save</label>
-        <input type="text" name="path" required/>
-    </div>
+        <div class="form-element">
+            <label>Enter the path of the directory you want to save</label>
+            <input type="text" name="path" required/>
+        </div>
 
-    <div class="form-element">
-        <label for="distri">Choose your distribution : </label>
-        <select id="distri" name="distri">
-            <option value="windows">Windows</option>
-            <option value="unix">Unix</option>
-        </select>
-    </div>
+        <div class="form-element">
+            <label for="distri">Choose your distribution : </label>
+            <select id="distri" name="distri">
+                <option value="windows">Windows</option>
+                <option value="unix">Unix</option>
+            </select>
+        </div>
 
-    <button type="submit" name="register" value="register">Register</button>
-</form>
-    </main>
+        <button type="submit" name="register" value="register">Register</button>
+    </form>
+</main>
 
 </body>
 </html>
