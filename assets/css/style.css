@@ -101,6 +101,9 @@ main {
     flex-direction: row;
     align-items: center;
 }
+.date > svg {
+    margin-right: 5px;
+}
 
 
 @media only screen and (min-width: 1280px) {
