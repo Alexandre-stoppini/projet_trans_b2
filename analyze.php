@@ -20,8 +20,6 @@ if (empty($_SESSION['username'])) {
     ChromePhp::log(exec("whoami"));
 
     $infos = preg_split("(\s)", $size_file);
-    echo $infos[0];
-    echo $infos[1];
     
 
 
