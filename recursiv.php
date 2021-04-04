@@ -8,9 +8,9 @@ function explore($path)
     //var_dump($chemin_array_file);
     for ($i = 0; $i < count($chemin_array_file); $i++) {
         if ($chemin_array_file[$i] == "directory") {
-            echo "<p>Dossier : </p>";
+            echo "<span><br>Dossier : </span>";
         } elseif ($chemin_array_file[$i] == "file") {
-            echo "<p>Fichier : </p>";
+            echo "<span><br>Fichier : </span>";
         } else {
             echo $chemin_array_file[$i];
         }
