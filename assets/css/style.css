@@ -136,7 +136,7 @@ main {
     flex-direction: row;
     justify-content: flex-start;
     margin-left: 20px;
-    align-items: baseline;
+    align-items: center;
 }
 .dir{
     display: flex;
@@ -153,7 +153,7 @@ main {
     width: 50px;
     transform: rotate(180deg);
 }
-.file a {
+.file a, .file svg {
     height: 50px;
     width: 50px;
 }
