@@ -134,7 +134,7 @@ main {
 .file{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-left: 20px;
     align-items: center;
 }
@@ -148,7 +148,7 @@ main {
     width: 50px;
 }
 
-.file > svg{
+.file > div > svg{
     height: 50px;
     width: 50px;
     transform: rotate(180deg);
