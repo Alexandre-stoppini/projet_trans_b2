@@ -15,7 +15,6 @@ if (isset($_POST['register'])) {
     $password_rep = $_POST['password_rep'];
     $ip = $_POST['ip'];
     $path = $_POST['path'];
-    $distri = $_POST['distri'];
 
     $error = 0;
 
@@ -51,7 +50,7 @@ if (isset($_POST['register'])) {
     }
 
     if ($error == 0) {
-        $query = $connection->prepare("INSERT INTO users(username, address, company, email, telephone ,password, ip, path, distri) VALUES (:username, :address, :company, :email, :telephone,:password_hash, :ip, :path, :distri)");
+        $query = $connection->prepare("INSERT INTO users(username, address, company, email, telephone ,password, ip, path) VALUES (:username, :address, :company, :email, :telephone,:password_hash, :ip, :path)");
         $query->bindParam("username", $username, PDO::PARAM_STR);
         $query->bindParam("address", $address, PDO::PARAM_STR);
         $query->bindParam("company", $company, PDO::PARAM_STR);
@@ -60,7 +59,6 @@ if (isset($_POST['register'])) {
         $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
         $query->bindParam("ip", $ip, PDO::PARAM_STR);
         $query->bindParam("path", $path, PDO::PARAM_STR);
-        $query->bindParam("distri", $distri, PDO::PARAM_STR);
         $result = $query->execute();
         if ($result) {
             try {
@@ -81,7 +79,7 @@ if (isset($_POST['register'])) {
 <main>
     <form method="post" action="" name="signup-form">
         <div class="form-element">
-            <label>username</label>
+            <label>Username</label>
             <input type="text" name="username" required/>
         </div>
 
@@ -125,13 +123,7 @@ if (isset($_POST['register'])) {
             <input type="text" name="path" required/>
         </div>
 
-        <div class="form-element">
-            <label for="distri">Choose your distribution : </label>
-            <select id="distri" name="distri">
-                <option value="windows">Windows</option>
-                <option value="unix">Unix</option>
-            </select>
-        </div>
+
 
         <button type="submit" name="register" value="register">Register</button>
     </form>
