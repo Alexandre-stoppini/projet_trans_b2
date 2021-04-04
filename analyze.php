@@ -34,7 +34,7 @@ if (empty($_SESSION['username'])) {
                 <div class="progress-bar">
                     <div class="bar"></div>
                 </div>
-                <h1><?php echo $infos[0]; ?></h1>
+                <h1><?php print_r($infos); ?></h1>
                 <p><?php echo $size_file; ?></p>
             </div>
             <div class="xLarge-4 large-4 medium-4 small-4 xsmall-4 infos">
