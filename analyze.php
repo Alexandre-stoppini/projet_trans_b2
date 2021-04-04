@@ -23,15 +23,12 @@ if (empty($_SESSION['username'])) {
     
     if (strpos($infos[0], "K")){
         $size = (float)substr($infos[0], 0, -1)*0.001;
-        ChromePhp::log($size);
     }
     elseif (strpos($infos[0], "M")){
         $size = (float)substr($infos[0], 0, -1);
-        ChromePhp::log($size);
     }
     else{
         $size = (float)substr($infos[0], 0, -1)*1000;
-        ChromePhp::log($size);
     }
 
     ?>

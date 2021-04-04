@@ -96,7 +96,13 @@ main {
     -webkit-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
     -moz-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
 }
-
+.container-scan{
+    background-color: #2e74a3;
+    margin: 20px;
+    box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+    -webkit-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+    -moz-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+}
 .progress-bar{
     width: 80%;
     height: 40px;
