@@ -36,7 +36,7 @@ if (empty($_SESSION['username'])) {
 
     ?>
     <div class="container">
-        <div class="xLarge-11 large-11 medium-11 small-11 xsmall-11 title">
+        <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12 title">
             <p>Analyse des données serveurs :</p>
         </div>
         <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12 container-infos">
