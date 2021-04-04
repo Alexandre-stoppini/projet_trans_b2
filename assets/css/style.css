@@ -10,6 +10,7 @@ header, footer {
     text-align: center;
     vertical-align: middle;
     line-height: 150px;
+    flex-wrap: wrap;
 
 }
 
@@ -45,7 +46,7 @@ main {
 
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: calc(100% - 40px);
@@ -68,6 +69,20 @@ main {
     box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
     -webkit-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
     -moz-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+}
+
+.progress-bar{
+    width: 80%;
+    height: 40px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.bar{
+    background-color: green;
+    height: 100%;
+    width: 20%;
 }
 
 @media only screen and (min-width: 1280px) {
