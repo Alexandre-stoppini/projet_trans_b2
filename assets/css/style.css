@@ -30,6 +30,8 @@ header, footer {
 
 .account > div > svg{
     color: whitesmoke;
+    width: 30px;
+    height: 30px;
 }
 
 .nav{
