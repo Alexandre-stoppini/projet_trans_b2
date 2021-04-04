@@ -24,7 +24,7 @@ if (empty($_SESSION['username'])) {
     if (strpos($infos[0], "K")){
         ChromePhp::log("salut");
         ChromePhp::log($infos[0]);
-        $size = (float)preg_replace("K", "", $infos[1]) / 1000;
+        $size = (float)preg_replace("K", "", $infos[1]);
         ChromePhp::log($size);
     }
     elseif (strpos($infos[0], "M")){
