@@ -23,13 +23,13 @@ function explore($path)
     $chemin = shell_exec("tree -J $path");
     $chemin_array_file = preg_split('/({"type":")|(","name":")|("})|(,)|(","contents":\[)|(\[)|(]})|(report","directories":\d*,"files":\d*)/', $chemin);
     for ($i = 0; $i < count($chemin_array_file); $i++) {
-     if ($i % 2 == 1 || $i == 0) {
+     if ($i % 2 == 0) {
             if ($chemin_array_file[$i] == "directory") {
-                echo "<span>Dossier : </span>"/* . $chemin_array_file[$i]*/;
+                echo "<span><br>Dossier : </span>"/* . $chemin_array_file[$i]*/;
             } elseif ($chemin_array_file[$i] == "file") {
                 echo "<span>Fichier : </span> " /*. $chemin_array_file[$i]*/;
             }
-        } elseif ($i % 2 == 0){
+        } elseif ($i % 2 == 1){
             echo  $chemin_array_file[$i];
         }
     }
