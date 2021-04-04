@@ -14,7 +14,6 @@ session_start();
 <body>
 <header>
     <div id="header">
-        <a href="./">Home</a>
         <?php
         if (empty($_SESSION['username'])) {
             ?>
@@ -23,7 +22,6 @@ session_start();
             ?>
             <?php
         } else {
-
             ?>
             <a href="analyze.php">Analyse de l'espace serveur</a>
             <a href="nav_file.php">Explorateur de fichiers</a>
