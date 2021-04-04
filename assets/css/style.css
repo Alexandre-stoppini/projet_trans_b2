@@ -27,6 +27,11 @@ header, footer {
     align-items: center;
     margin-right: 20px;
 }
+
+.account > div > svg{
+    color: whitesmoke;
+}
+
 .nav{
     display: flex;
     flex-direction: row;
