@@ -26,9 +26,12 @@ if (empty($_SESSION['username'])) {
         $size = (float)preg_replace("K", "", $infos[1]) / 1000;
     }
     elseif (preg_match("M", $infos[1])){
+        ChromePhp::log("M");
         $size = (float)preg_replace("M", "", $infos[1]);
     }
     else{
+        ChromePhp::log("salam");
+        ChromePhp::log($infos[1]);
         $size = (float)preg_replace("G", "", $infos[1]) * 1000;
     }
 
