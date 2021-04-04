@@ -22,13 +22,13 @@ if (empty($_SESSION['username'])) {
     $infos = preg_split("(\s)", $size_file);
     
     if (preg_match("K", $infos[1])){
-        $size = (float)preg_replace("K", "", $infos[1]) / 1000000;
+        $size = (float)preg_replace("K", "", $infos[1]) / 1000;
     }
     elseif (preg_match("M", $infos[1])){
-        $size = (float)preg_replace("M", "", $infos[1]) / 1000;
+        $size = (float)preg_replace("M", "", $infos[1]);
     }
     else{
-        $size = (float)preg_replace("G", "", $infos[1]);
+        $size = (float)preg_replace("G", "", $infos[1]) * 1000;
     }
 
     ?>
@@ -40,15 +40,15 @@ if (empty($_SESSION['username'])) {
             <div class="xLarge-7 large-7 medium-7 small-7 xsmall-7 infos">
                 <h1>Espace occupé par vos fichiers :</h1>
                 <div class="progress-bar">
-                    <div class="bar" style="width: <?php 100*$size ?> "></div>
+                    <div class="bar" style="width: <?php echo 100*$size ?> "></div>
                 </div>
                 <div>
                     <h3>Volume :</h3>
-                    <p><?php echo $size; ?> Go</p>
+                    <p><?php echo $size; ?> Mo</p>
                 </div>
                 <div>
                     <h3>Path :</h3>
-                    <p><?php echo $infos[2]; ?></p>
+                    <p><?php print_r($infos); echo $infos[2]; ?></p>
                 </div>
             </div>
             <div class="xLarge-4 large-4 medium-4 small-4 xsmall-4 infos">
