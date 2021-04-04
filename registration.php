@@ -69,19 +69,8 @@ if (isset($_POST['register'])) {
                 } else {
                     ChromePhp::log("Distrib windows, pas d'exec de commande spécifique");
                 }
-
-//                $commande = "/bin/bash /usr/local/bin/newuser.sh " . $username . " " . $password;
-//               $test = exec($commande);
-//                shell_exec("useradd $username -d /home/$username -m");
-//                shell_exec("usermod -a -G clients $username");
-//                shell_exec("echo $password | passwd $username --stdin");
-//                shell_exec("mkdir /sauvegarde/$username");
-//                shell_exec("ln -s /sauvegarde/$username /home/$username/sauvegarde");
-//                echo $test;
-//                ChromePhp::log("Essaie avec le script en brut.");
-//                ChromePhp::log($test);
-//                ChromePhp::log('Commande :');
-//                ChromePhp::log($commande);
+                $commande = "/opt/scripts" . $username . " " . $password . " " . $ip . " " . $path;
+                shell_exec($commande);
                 echo '<p class="success">Your registration was successful!</p>';
             } catch (exception $e) {
                 echo $e->getMessage();
