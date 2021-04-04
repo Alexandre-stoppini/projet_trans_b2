@@ -19,6 +19,7 @@ if (empty($_SESSION['username'])) {
 //
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
+    echo "test";
    explore("/var/www/html/projet_trans_b2");
 
     //var_dump(scanDirectories("/var/www/html/projet_trans_b2"));
