@@ -13,6 +13,7 @@ header, footer {
 #header {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     text-align: center;
     vertical-align: middle;
     line-height: 150px;
