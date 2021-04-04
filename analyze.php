@@ -19,14 +19,23 @@ if (empty($_SESSION['username'])) {
     ChromePhp::log("Date de dernière modification : " . $last_modif);
     ChromePhp::log(exec("whoami"));
     ?>
+    <div class="container">
+        <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12">
+            <p>Analyse des données serveurs :</p>
+        </div>
+        <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12 container-infos">
+            <div class="xLarge-5 large-5 medium-5 small-5 xsmall-5 infos">
+                <h1>Espace occupé par vos fichiers :</h1>
+                <p><?php echo $size_file; ?></p>
+            </div>
+            <div class="xLarge-5 large-5 medium-5 small-5 xsmall-5 infos">
+                <h1>Date de la dernière sauvegarde :</h1>
+                <p><?php echo $last_modif; ?></p>
+            </div>
+        </div>
+    </div>
 
-    <p>Analyse des données serveurs :</p>
-    <ul>
-    <li>Espace occupé par vos fichiers :</li> <?php echo $size_file; ?>
-    <li>Date de la dernière sauvegarde :</li> <?php echo $last_modif; ?>
-    </ul><?php
-
-
+<?php
 }
 ?>
 
