@@ -52,7 +52,7 @@ if (empty($_SESSION['username'])) {
                 </div>
                 <div>
                     <h3>Path :</h3>
-                    <p><?php print_r($infos[1]); ?></p>
+                    <p><?php echo $infos[1]; ?></p>
                 </div>
             </div>
             <div class="xLarge-4 large-4 medium-4 small-4 xsmall-4 infos">
