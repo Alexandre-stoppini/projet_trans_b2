@@ -11,7 +11,7 @@ if (empty($_SESSION['username'])) {
     $commande_size = 'du -sh /sauvegarde/' . $_SESSION["username"];
     $size_file = shell_exec("$commande_size");
     $commande_last_modif = "stat -c %y /sauvegarde/" . $_SESSION["username"] . " | cut -d '.' -f1";
-    $last_modif = exec("$commande_last_modif");;
+    $last_modif = exec("$commande_last_modif");
     $infos = preg_split("(\s)", $size_file);
     if (strpos($infos[0], "K")) {
         $size = (float)substr($infos[0], 0, -1) * 0.001;

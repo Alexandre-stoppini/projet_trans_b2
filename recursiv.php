@@ -13,7 +13,7 @@ function explore($path)
             echo "<div class='file'>
                 <span>Votre fichier à télécharger : " . $foo[count($foo)-1] . "</span>
                 <a href='/sauvegarde/". $chemin_array[$i] ."' download>
-                    <svg>
+                    <svg viewBox='0 0 48 48'>
                     <path d='M17 12v5H3v-5H1v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5z'/>
                     <path d='M10 15l5-6h-4V1H9v8H5l5 6z'/>
                     </svg>
