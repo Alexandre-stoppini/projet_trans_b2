@@ -32,6 +32,9 @@ header a {
     color: whitesmoke;
     text-decoration: none;
 }
+header div{
+    color: whitesmoke;
+}
 
 header a:hover {
     color: #00A0C6;
