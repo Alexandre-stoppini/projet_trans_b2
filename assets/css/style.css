@@ -153,6 +153,11 @@ main {
     width: 50px;
     transform: rotate(180deg);
 }
+.file > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .file a, .file svg {
     height: 30px;
     width: 30px;
