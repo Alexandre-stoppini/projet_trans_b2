@@ -3,7 +3,8 @@ function explore($path)
     /* TODO : faire de $path une variable global et penser et à la supprimer dans logout*/
 {
 
-    $chemin = shell_exec("tree -J $path");
+    $chemin = shell_exec("tree -fi $path");
+    //tree -J
 //    $chemin_array_file = preg_split('/({"type":")|(","name":")|("})|(,)|(","contents":\[)|(\[)|(]})|(report","directories":\d*,"files":\d*(})|(]))/', $chemin);
 //    for ($i = 0; $i < count($chemin_array_file); $i++) {
 //        if ($chemin_array_file[$i] == "directory") {
