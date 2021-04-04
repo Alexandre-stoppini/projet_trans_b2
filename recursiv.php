@@ -22,8 +22,8 @@ function explore($path)
 //    }
 
     $chemin = shell_exec("tree -J $path");
-    $chemin_array_file = preg_split('/({"type":").*(","name":").*(})/', $chemin);
-    for ($i = 1; $i < count($chemin_array_file); $i++) {
+    $chemin_array_file = preg_split('/({"type":")|(","name":")|(})|(,)|(","contents":\[)|(\[)|(])/', $chemin);
+    for ($i = 0; $i < count($chemin_array_file); $i++) {
 //        if ($i % 2 == 0) {
             echo "\n" . $chemin_array_file[$i];
         //}
