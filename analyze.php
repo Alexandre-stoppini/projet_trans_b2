@@ -21,11 +21,11 @@ if (empty($_SESSION['username'])) {
 
     $infos = preg_split("(\s)", $size_file);
     
-    if (preg_match("K", $infos[1])){
+    if (preg_match("K", $infos[0])){
         ChromePhp::log("salut");
         $size = (float)preg_replace("K", "", $infos[1]) / 1000;
     }
-    elseif (preg_match("M", $infos[1])){
+    elseif (preg_match("M", $infos[0])){
         ChromePhp::log("M");
         $size = (float)preg_replace("M", "", $infos[1]);
     }
