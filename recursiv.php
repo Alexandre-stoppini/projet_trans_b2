@@ -4,7 +4,7 @@ function explore($path)
 {
 
     $chemin = shell_exec("tree -J $path");
-    $chemin_array_file = preg_split('/({"type":")|(","name":")|("})|(,)|(","contents":\[)|(\[)|(]})|(report","directories":\d*,"files":\d*)/', $chemin);
+    $chemin_array_file = preg_split('/({"type":")|(","name":")|("})|(,)|(","contents":\[)|(\[)|(]})|(report","directories":\d*,"files":\d*(})|(]))/', $chemin);
     //var_dump($chemin_array_file);
     for ($i = 0; $i < count($chemin_array_file); $i++) {
         if ($chemin_array_file[$i] == "directory") {
