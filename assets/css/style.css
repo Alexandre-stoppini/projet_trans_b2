@@ -27,13 +27,13 @@ header, footer {
     color: black;
 }
 
-header > a {
+header a {
     margin: 20px;
     color: whitesmoke;
     text-decoration: none;
 }
 
-header > a:hover {
+header a:hover {
     color: #00A0C6;
     text-decoration: none;
     cursor: pointer;
