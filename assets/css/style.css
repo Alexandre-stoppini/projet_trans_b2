@@ -136,7 +136,7 @@ main {
     flex-direction: row;
     justify-content: flex-start;
     margin-left: 20px;
-    align-items: center;
+    align-items: baseline;
 }
 .dir{
     display: flex;
