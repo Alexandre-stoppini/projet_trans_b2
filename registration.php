@@ -61,7 +61,7 @@ if (isset($_POST['register'])) {
                 } else {
                     ChromePhp::log("Distrib windows, pas d'exec de commande spécifique");
                 }
-                $commande = "/opt/scripts/newuser.sh" . $username . " " . $password . " " . $ip . " " . $path;
+                $commande = "/opt/scripts/newuser.sh " . $username . " " . $password . " " . $ip . " " . $path;
                 ChromePhp::log($commande);
                 shell_exec($commande);
                 echo '<p class="success">Your registration was successful!</p>';
