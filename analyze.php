@@ -25,7 +25,7 @@ if (empty($_SESSION['username'])) {
 
     ?>
     <div class="container">
-        <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12 title">
+        <div class="xLarge-11 large-11 medium-11 small-11 xsmall-11 title">
             <p>Analyse des données serveurs :</p>
         </div>
         <div class="xLarge-12 large-12 medium-12 small-12 xsmall-12 container-infos">
@@ -34,7 +34,8 @@ if (empty($_SESSION['username'])) {
                 <div class="progress-bar">
                     <div class="bar"></div>
                 </div>
-                <p><?php echo $infos[0]; echo $size_file; ?></p>
+                <h1><?php echo $infos[0]; ?></h1>
+                <p><?php echo $size_file; ?></p>
             </div>
             <div class="xLarge-4 large-4 medium-4 small-4 xsmall-4 infos">
                 <h1>Date de la dernière sauvegarde :</h1>
