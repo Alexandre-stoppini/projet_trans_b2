@@ -134,6 +134,7 @@ main {
 .file{
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
 }
 .dir{
@@ -142,6 +143,11 @@ main {
     align-items: center;
 }
 .dir svg{
+    height: 50px;
+    width: 50px;
+}
+
+.file a {
     height: 50px;
     width: 50px;
 }
