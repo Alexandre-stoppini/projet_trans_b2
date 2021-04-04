@@ -1,11 +1,3 @@
 <?php
-include_once("includes/front/header.php");
-include 'ChromePhp.php';
-
-
+header("Location:login.php");
 ?>
-
-
-
-</body>
-</html>
