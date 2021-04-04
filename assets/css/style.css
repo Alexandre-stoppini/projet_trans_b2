@@ -161,6 +161,7 @@ main {
 .file a, .file svg {
     height: 30px;
     width: 30px;
+    margin-right: 20px;
 }
 .file a {
     right: 0;
