@@ -9,31 +9,12 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
-//    $test = shell_exec('ls /');
-//
-//    echo $test;
-//
-//    $test_array = preg_split("/[\s,]+/", $test);
-//
-//    for ($i = 0; $i < count($test_array); $i++) {
-//
-//        echo "<p>" . $test_array[$i] ."</p>";
-//  }
+
     ?>
     <div class="container-scan">
-    <?php
-        explore("/sauvegarde/". $_SESSION['username']);
-    ?>
+        <?php
+        explore("/sauvegarde/" . $_SESSION['username']);
+        ?>
     </div>
-    
-
-    <!--    <a href="/opt/scripts/newuser.sh" id="dl_serv" download>Test de dl</a>-->
-    <!--    <a href="/bdd/acces_bdd.txt" id="dl_serv" download>Test de dl</a>-->
-
-
     <?php
-//    $result = shell_exec('whoami');
-//    $result = shell_exec('cat /home/rempart/test.txt');
-//    ChromePhp::log($result);
-//    echo $result;
-}?>
+} ?>
