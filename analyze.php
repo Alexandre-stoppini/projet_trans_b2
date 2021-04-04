@@ -22,6 +22,7 @@ if (empty($_SESSION['username'])) {
     $infos = preg_split("(\s)", $size_file);
     
     if (preg_match("K", $infos[1])){
+        ChromePhp::log("salut");
         $size = (float)preg_replace("K", "", $infos[1]) / 1000;
     }
     elseif (preg_match("M", $infos[1])){
@@ -48,7 +49,7 @@ if (empty($_SESSION['username'])) {
                 </div>
                 <div>
                     <h3>Path :</h3>
-                    <p><?php print_r($infos); echo $infos[2]; ?></p>
+                    <p><?php print_r($infos[2]); ?></p>
                 </div>
             </div>
             <div class="xLarge-4 large-4 medium-4 small-4 xsmall-4 infos">
