@@ -9,12 +9,10 @@ header, footer {
     height: auto;
     font-size: 1.5rem;
 }
-header{
-    display: flex;
-    flex-direction: row;
-}
 
 #header {
+    display: flex;
+    flex-direction: row;
     text-align: center;
     vertical-align: middle;
     line-height: 150px;
