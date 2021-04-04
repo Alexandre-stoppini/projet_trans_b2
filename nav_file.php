@@ -19,16 +19,13 @@ if (empty($_SESSION['username'])) {
 //
 //        echo "<p>" . $test_array[$i] ."</p>";
 //  }
-
-   explore("/sauvegarde/". $_SESSION['username']);
-
-    //var_dump(scanDirectories("/var/www/html/projet_trans_b2"));
-
-    //    $chemin = (shell_exec("tree -J /opt/scripts"));
-//
-//    var_dump(json_encode($chemin)[0]);
     ?>
-
+    <div class="container-scan">
+    <?php
+        explore("/sauvegarde/". $_SESSION['username']);
+    ?>
+    </div>
+    
 
     <!--    <a href="/opt/scripts/newuser.sh" id="dl_serv" download>Test de dl</a>-->
     <!--    <a href="/bdd/acces_bdd.txt" id="dl_serv" download>Test de dl</a>-->
@@ -39,4 +36,4 @@ if (empty($_SESSION['username'])) {
 //    $result = shell_exec('cat /home/rempart/test.txt');
 //    ChromePhp::log($result);
 //    echo $result;
-}
+}?>

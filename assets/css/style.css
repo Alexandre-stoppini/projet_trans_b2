@@ -64,11 +64,22 @@ main {
     align-items: center;
 }
 
-.infos{
+.info-volume{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto;
+    height: 350px;
+    background-color: #2e74a3;
+    box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+    -webkit-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+    -moz-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+}
+.info-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
     background-color: #2e74a3;
     box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
     -webkit-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
@@ -85,7 +96,13 @@ main {
     -webkit-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
     -moz-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
 }
-
+.container-scan{
+    background-color: #2e74a3;
+    margin: 20px;
+    box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+    -webkit-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+    -moz-box-shadow: -12px 10px 32px 6px rgba(92,92,92,0.75);
+}
 .progress-bar{
     width: 80%;
     height: 40px;
@@ -111,6 +128,21 @@ main {
     font-size: 40px;
     font-weight: bold;
     text-decoration: underline;
+}
+
+.file{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.dir{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dir > a, .file > a{
+    margin: 0;
 }
 
 @media only screen and (min-width: 1280px) {
