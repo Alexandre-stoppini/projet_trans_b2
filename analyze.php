@@ -7,7 +7,7 @@ if (empty($_SESSION['username'])) {
     <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
     <?php
 } else {
-    echo 'Bienvenue ' . $_SESSION["username"];
+    
     $commande_size = 'du -sh /sauvegarde/' . $_SESSION["username"];
     $size_file = shell_exec("$commande_size");
     $commande_last_modif = "stat -c %y /sauvegarde/" . $_SESSION["username"] . " | cut -d '.' -f1";
