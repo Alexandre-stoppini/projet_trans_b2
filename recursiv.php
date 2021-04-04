@@ -14,7 +14,8 @@ function explore($path)
 //            echo $chemin_array_file[$i];
 //        }
 //      }
-    $chemin_array = preg_split('/(^.*->.*$)|(\/sauvegarde\/)/', $chemin);
+    $chemin_array = preg_split('/(^.*->.*$)/', $chemin);
+    $chemin_array = preg_split('/(\/sauvegarde\/)|(\d*\sdirectories,\s\d*\sfiles)/', $chemin_array);
     for ($i = 0; $i < count($chemin_array); $i++) {
 
         // print tous les fichiers
