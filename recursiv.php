@@ -15,6 +15,7 @@ function explore($path)
 //        }
 //      }
     $chemin_array = preg_split('/(^.*->.*$)|(\/sauvegarde\/)/', $chemin);
+    var_dump($chemin_array);
     for ($i = 0; $i < count($chemin_array); $i++) {
 
         // print tous les fichiers
