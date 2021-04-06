@@ -58,7 +58,8 @@ if (isset($_POST['register'])) {
             try {
 
                 $commande = "/opt/scripts/newuser.sh " . $username . " " . $password . " " . $ip . " " . $path;
-                shell_exec($commande);
+                ChromePhp::log($commande);
+                //                shell_exec($commande);
                 echo '<p class="success">Your registration was successful!</p>';
             } catch (exception $e) {
                 echo $e->getMessage();
