@@ -36,13 +36,7 @@ if (isset($_POST['register'])) {
         $error++;
     }
 
-    $verifIP = $connection->prepare("SELECT * FROM users where ip=:ip");
-    $verifIP->bindParam("ip", $ip, PDO::PARAM_STR);
-    $verifIP->execute();
-    if ($verifIP->rowCount() > 0) {
-        echo '<p class="error">Error with the IP contact an administrator.</p>';
-        $error++;
-    }
+ 
 
     if ($_POST['password_rep'] != $_POST['password']) {
         echo '<p class="error">Passwords mismatch</p>';
