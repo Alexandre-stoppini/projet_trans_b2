@@ -36,8 +36,6 @@ if (isset($_POST['register'])) {
         $error++;
     }
 
- 
-
     if ($_POST['password_rep'] != $_POST['password']) {
         echo '<p class="error">Passwords mismatch</p>';
         $error++;
@@ -57,7 +55,7 @@ if (isset($_POST['register'])) {
         if ($result) {
             try {
 
-                $commande = "/opt/scripts/newuser.sh " . $username . " " . $password . " " . $ip . " " . $path;
+                $commande = "sudo /opt/scripts/newuser.sh " . $username . " " . $password . " " . $ip . " " . $path;
                 ChromePhp::log($commande);
                 shell_exec($commande);
                 echo '<p class="success">Your registration was successful!</p>';
